@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="RobOptim : RobOptim. Numerical Optimization for Robotics" />
+    <meta name="description" content="RobOptim : Numerical Optimization for Robotics" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -34,7 +34,7 @@
           <a id="forkme_banner" href="https://github.com/roboptim">View on GitHub</a>
 
           <h1 id="project_title">RobOptim</h1>
-          <h2 id="project_tagline">RobOptim. Numerical Optimization for Robotics</h2>
+          <h2 id="project_tagline">Numerical Optimization for Robotics</h2>
 
         </header>
     </div>
@@ -42,32 +42,193 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+        <h3>What is RobOptim?</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+	<p>
+	  <em>RobOptim</em> is a set of packages designed to make robotics
+	  non-linear optimization problem easier to solve. It is composed of
+	  several packages which are focusing on different kind of problem related
+	  to robotics, especially humanoid robotics.
+	</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+	<p>
+	  Support is done through the
+	  <a href=
+             "https://lists.sourceforge.net/lists/listinfo/roboptim-user">roboptim-user
+          </a> mailing-list, see the <a href="#mailinglist">mailing-list
+            section</a>.
+	</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>Designer Templates</h3>
+	<h3>Libraries description</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+    <dl>
+      <dt>roboptim-core</dt>
+      <dd>Generic C++ package used to solve non-linear optimization problem
+        (<em>not</em> robotics specific).</dd>
 
-<h3>Rather Drive Stick?</h3>
+      <dt>roboptim-core-ipopt-plugin</dt>
+      <dd>Allows Ipopt solver to be used as a back-end of roboptim-core.</dd>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+      <dt>roboptim-core-cfsqp-plugin</dt>
+      <dd>Allows CFSQP solver to be used as a back-end of roboptim-core
+	(not distributed on-line due to the restrictive license of CFSQP,
+	see CFSQP web site for more information).</dd>
 
-<h3>Authors and Contributors</h3>
+      <dt>roboptim-posture</dt>
+      <dd>Posture optimization for robotics.</dd>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+      <dt>roboptim-trajectory</dt>
+      <dd>Trajectory optimization for robotics.</dd>
+    </dl>
 
-<h3>Support or Contact</h3>
+<h3>Releases</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+    <dl>
+      <dt>2009-11-16</dt> <dd>Release 0.4
+      (<a href="https://sourceforge.net/projects/roboptim/files/">download</a>).
+      </dd>
+
+      <dt>2009-09-25</dt> <dd>Release 0.3
+      (<a href="https://sourceforge.net/projects/roboptim/files/roboptim-core/0.3/roboptim-core-0.3.tar.bz2/download">download</a>).
+      </dd>
+
+      <dt>2009-05-04</dt> <dd>Release 0.2: Update
+	<code>roboptim-core</code>, initial release
+	of <code>roboptim-core-plugin-ipopt</code>
+	and <code>roboptim-trajectory</code>.
+      </dd>
+
+      <dt>2009-04-17</dt> <dd>Release 0.1: Initial release
+      of <code>roboptim-core</code>
+      (<a href="https://sourceforge.net/project/showfiles.php?group_id=259573&amp;package_id=318684&amp;release_id=676477">download</a>).</dd>
+    </dl>
+
+    <h3>Documentation</h3>
+
+    <div class="block">
+      <h3>Core</h3>
+      <ul>
+        <li><a href="doc/core/0.1/">HTML (0.1)</a></li>
+        <li><a href="doc/core/0.2/">HTML (0.2)</a></li>
+        <li><a href="doc/core/0.3/">HTML (0.3)</a></li>
+        <li><a href="doc/core/0.4/">HTML (0.4)</a></li>
+        <li><a href="doc/core/HEAD/">HTML (development version)</a></li>
+	<li>
+	  Plug-ins:
+	  <ul>
+	    <li>Ipopt
+	      <ul>
+		<li><a href="doc/core-ipopt-plugin/0.2/">HTML
+		(0.2)</a></li>
+		<li><a href="doc/core-ipopt-plugin/HEAD/">HTML
+		(development version)</a></li>
+	      </ul>
+	    </li>
+	    <li>CFSQP
+	      <ul>
+		<li><a href="doc/core-cfsqp-plugin/0.2/">HTML
+		(0.2)</a></li>
+		<li><a href="doc/core-cfsqp-plugin/0.4/">HTML
+		(0.4)</a></li>
+		<li><a href="doc/core-cfsqp-plugin/HEAD/">HTML
+		(development version)</a></li>
+	      </ul>
+	      </li>
+	  </ul>
+	</li>
+      </ul>
+
+      <h3>Trajectory</h3>
+      <ul>
+        <li><a href="doc/trajectory/0.2.1/">HTML (0.2.1)</a></li>
+        <li><a href="doc/trajectory/0.4/">HTML (0.4)</a></li>
+        <li><a href="doc/trajectory/HEAD/">HTML (development version)</a></li>
+      </ul>
+
+
+      Documentation can also be generated through <code>make doc</code>.<br/>
+      If the package is installed on your system, this documentation should be available in
+      <code>/usr/share/doc/roboptim-core/doxygen-html</code>,
+      <code>/usr/share/doc/roboptim-trajectory/doxygen-html</code>.
+    </div>
+
+    <h3>Download</h3>
+
+    <p>
+      The releases are available on
+      the <a href="https://sourceforge.net/project/showfiles.php?group_id=259573">SourceForge
+      space</a> for download.
+    </p>
+
+    <p>
+      You can also retrieve the latest development version on
+      the <a href="https://sourceforge.net/scm/?type=git&amp;group_id=259573">Git
+      repository</a>.
+    </p>
+
+    <h3>Mailing-list</h3>
+
+    <dl>
+      <dt>
+        <a href="https://lists.sourceforge.net/mailman/listinfo/roboptim-announce">roboptim-announce</a>
+      </dt>
+      <dd>Announce mailing-list (low volume)</dd>
+
+      <dt>
+        <a href="https://lists.sourceforge.net/mailman/listinfo/roboptim-user">roboptim-user</a>
+      </dt>
+      <dd>User mailing-list (high volume, please use this mailing-list for communication)</dd>
+
+      <dt>
+        <a href="https://lists.sourceforge.net/mailman/listinfo/roboptim-commit">roboptim-commit</a>
+      </dt>
+      <dd>Commit mailing-list (high volume)</dd>
+
+      <dt>
+        <a href="https://lists.sourceforge.net/mailman/listinfo/roboptim-devel">roboptim-devel</a>
+      </dt>
+      <dd>Developer only mailing-list (private)</dd>
+    </dl>
+
+    <h3>Development</h3>
+
+    <p>
+    Development statistics are provided by <a
+    href="https://www.ohloh.net/p/roboptim">Ohloh</a>.
+    </p>
+
+    <div style="float: left; padding: 1em">
+    <script type="text/javascript"
+    src="http://www.ohloh.net/p/338750/widgets/project_basic_stats.js"></script>
+    </div>
+
+    <div style="float: left; padding: 1em">
+    <script type="text/javascript"
+    src="http://www.ohloh.net/p/338750/widgets/project_languages.js"></script>
+    </div>
+
+    <div style="float: left; padding: 1em">
+    <script type="text/javascript"
+    src="http://www.ohloh.net/p/338750/widgets/project_factoids.js"></script>
+    </div>
+
+    <div style="clear: both">&nbsp;</div>
+
+    <h3>SourceForge</h3>
+    <ul>
+      <li><a href="https://sourceforge.net/projects/roboptim">SourceForge space</a></li>
+      <li>
+	<a href="https://sourceforge.net/scm/?type=git&amp;group_id=259573">Git</a>
+	(<a href="http://roboptim.git.sourceforge.net/git/gitweb.cgi?p=roboptim">browse
+	repository</a>)
+      </li>
+      <li><a href="http://apps.sourceforge.net/trac/roboptim/report">Tickets</a>
+        (<a href="http://apps.sourceforge.net/trac/roboptim/report/1">active</a>)</li>
+      <li><a href="http://apps.sourceforge.net/trac/roboptim/wiki">Wiki</a></li>
+    </ul>
+
+
       </section>
     </div>
 
