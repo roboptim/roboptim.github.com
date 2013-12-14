@@ -46,8 +46,8 @@
 
 	<p>
 	  <em>RobOptim</em> is a set of packages designed to make robotics
-	  non-linear optimization problem easier to solve. It is composed of
-	  several packages which are focusing on different kind of problem related
+	  nonlinear optimization problems easier to solve. It is composed of
+	  several packages which are focusing on different kinds of problems related
 	  to robotics, especially humanoid robotics.
 	</p>
 
@@ -64,34 +64,42 @@
     <dl>
       <dt><a href="https://github.com/roboptim/roboptim-core"
 	     >roboptim-core</a></dt>
-      <dd>Generic C++ package used to solve non-linear optimization problem
+      <dd>Generic C++ package used to solve nonlinear optimization problems
         (<em>not</em> robotics specific).</dd>
-
 
       <dt><a href="https://github.com/roboptim/roboptim-core-python"
 	     >roboptim-core-python</a></dt>
       <dd>Python bindings for RobOptim Core.</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-ipopt"
-	     >roboptim-core-plugin-ipopt</a></dt>
-      <dd>Allows Ipopt solvers to be used as a back-end of roboptim-core.</dd>
+      <dt>roboptim-core-cfsqp-plugin</dt>
+      <dd>Allows CFSQP solver to be used as a back end of roboptim-core
+	(not distributed online due to the restrictive license of CFSQP,
+	see CFSQP website for more information).</dd>
 
       <dt><a href="https://github.com/roboptim/roboptim-core-plugin-cminpack"
 	     >roboptim-core-plugin-cminpack</a></dt>
-      <dd>Allows CMinPack to be used as a back-end of roboptim-core.</dd>
+      <dd>Allows CMinPack to be used as a back end of roboptim-core.</dd>
 
-      <dt>roboptim-core-cfsqp-plugin</dt>
-      <dd>Allows CFSQP solver to be used as a back-end of roboptim-core
-	(not distributed on-line due to the restrictive license of CFSQP,
-	see CFSQP web site for more information).</dd>
+      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-eigen"
+	     >roboptim-core-plugin-eigen</a></dt>
+      <dd>Allows Eigen solvers to be used as a back end of roboptim-core.</dd>
+
+      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-ipopt"
+	     >roboptim-core-plugin-ipopt</a></dt>
+      <dd>Allows Ipopt solvers to be used as a back end of roboptim-core.</dd>
 
       <dt><a href="https://github.com/roboptim/roboptim-core-plugin-nag"
 	     >roboptim-core-plugin-nag</a></dt>
-      <dd>Allows NAG solvers to be used as a back-end of roboptim-core.</dd>
+      <dd>Allows NAG solvers to be used as a back end of roboptim-core.</dd>
+
+      <dt><a href="https://github.com/roboptim/roboptim-analysis"
+	     >roboptim-analysis</a></dt>
+      <dd>Analysis scripts for RobOptim logs.</dd>
 
       <dt><a href="https://github.com/roboptim/roboptim-trajectory"
 	     >roboptim-trajectory</a></dt>
       <dd>Trajectory optimization for robotics.</dd>
+
     </dl>
 
 <h3>Releases</h3>
@@ -136,6 +144,27 @@
 	<li>
 	  Plug-ins:
 	  <ul>
+	    <li>CFSQP
+	      <ul>
+		<li><a href="#">HTML
+		(not yet available)</a></li>
+	      </ul>
+	      </li>
+
+	    <li>CMinPack
+	      <ul>
+		<li><a href="roboptim-core-plugin-cminpack/doxygen/HEAD/">HTML
+		    (development version)</a></li>
+	      </ul>
+	      </li>
+
+	    <li>Eigen
+	      <ul>
+		<li><a href="roboptim-core-plugin-eigen/doxygen/HEAD/">HTML
+		    (development version)</a></li>
+	      </ul>
+	      </li>
+
 	    <li>Ipopt
 	      <ul>
 		<li><a href="roboptim-core-plugin-ipopt/doxygen/HEAD/">HTML
@@ -144,18 +173,13 @@
 		</a></li>
 	      </ul>
 	    </li>
+
 	    <li>NAG
 	      <ul>
 		<li><a href="roboptim-core-plugin-nag/doxygen/HEAD/">HTML
 		    (development version)</a></li>
 	      </ul>
 	    </li>
-	    <li>CFSQP
-	      <ul>
-		<li><a href="#">HTML
-		(not yet available)</a></li>
-	      </ul>
-	      </li>
 	  </ul>
 	</li>
       </ul>
@@ -188,7 +212,7 @@
     </p>
 
     <p>
-      You can also retrieve the latest development version on
+      You can also retrieve the latest development versions on
       the <a href="https://github.com/roboptim">Git
       repository</a>.
     </p>
@@ -207,11 +231,13 @@
     <table>
       <tr>
 	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core">
+	  <a href="https://github.com/roboptim/roboptim-core">
 	    roboptim-core</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core.png?branch=master" alt="roboptim-core build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-core">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core.png?branch=master" alt="roboptim-core build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-core?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-core/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
@@ -219,11 +245,13 @@
       </tr>
       <tr>
 	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-python">
+	  <a href="https://github.com/roboptim/roboptim-core-python">
 	    roboptim-core-python</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-python.png?branch=master" alt="roboptim-core-python build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-core-python">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core-python.png?branch=master" alt="roboptim-core-python build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-core-python?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-python/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
@@ -232,11 +260,13 @@
 
       <tr>
 	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack">
+	  <a href="https://github.com/roboptim/roboptim-core-plugin-cminpack">
 	    roboptim-core-plugin-cminpack</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack.png?branch=master" alt="roboptim-core-plugin-cminpack build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack.png?branch=master" alt="roboptim-core-plugin-cminpack build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-cminpack?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-cminpack/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
@@ -245,11 +275,28 @@
 
       <tr>
 	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt">
+	  <a href="https://github.com/roboptim/roboptim-core-plugin-eigen">
+	    roboptim-core-plugin-eigen</a>
+	</td>
+	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-eigen">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-eigen.png?branch=master" alt="roboptim-core-plugin-eigen build status"/>
+	  </a>
+	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-eigen?branch=master'>
+	    <img src='https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.png' alt='Coverage Status' />
+	  </a>
+	</td>
+      </tr>
+
+      <tr>
+	<td style="font-weight: bold; vertical-align: middle">
+	  <a href="https://github.com/roboptim/roboptim-core-plugin-ipopt">
 	    roboptim-core-plugin-ipopt</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt.png?branch=master" alt="roboptim-core-plugin-ipopt build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt.png?branch=master" alt="roboptim-core-plugin-ipopt build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-ipopt?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-ipopt/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
@@ -258,25 +305,43 @@
 
       <tr>
 	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-nag">
+	  <a href="https://github.com/roboptim/roboptim-core-plugin-nag">
 	    roboptim-core-plugin-nag</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-nag.png?branch=master" alt="roboptim-core-plugin-nag build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-nag">
+	    <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-nag.png?branch=master" alt="roboptim-core-plugin-nag build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-nag?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-nag/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
 	</td>
       </tr>
 
+      <tr>
+	<td style="font-weight: bold; vertical-align: middle">
+	  <a href="https://github.com/roboptim/roboptim-analysis">
+	    roboptim-analysis</a>
+	</td>
+	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	  <a href="https://travis-ci.org/roboptim/roboptim-analysis">
+	    <img src="https://travis-ci.org/roboptim/roboptim-analysis.png?branch=master" alt="roboptim-analysis build status"/>
+	  </a>
+	  <a href='https://coveralls.io/r/roboptim/roboptim-analysis?branch=master'>
+	    <img src='https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.png' alt='Coverage Status' />
+	  </a>
+	</td>
+      </tr>
 
       <tr>
 	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-trajectory">
+	  <a href="https://github.com/roboptim/roboptim-trajectory">
 	    roboptim-trajectory</a>
 	</td>
 	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-trajectory.png?branch=master" alt="roboptim-trajectory build status"/>
+	  <a href="https://travis-ci.org/roboptim/roboptim-trajectory">
+	    <img src="https://travis-ci.org/roboptim/roboptim-trajectory.png?branch=master" alt="roboptim-trajectory build status"/>
+	  </a>
 	  <a href='https://coveralls.io/r/roboptim/roboptim-trajectory?branch=master'>
 	    <img src='https://coveralls.io/repos/roboptim/roboptim-trajectory/badge.png?branch=master' alt='Coverage Status' />
 	  </a>
