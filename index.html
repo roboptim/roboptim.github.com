@@ -10,33 +10,33 @@
 
     <title>RobOptim</title>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34448532-1']);
-  _gaq.push(['_setDomainName', 'roboptim.net']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34448532-1']);
+      _gaq.push(['_setDomainName', 'roboptim.net']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-</script>
+    </script>
   </head>
 
   <body>
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/roboptim">View on GitHub</a>
+      <header class="inner">
+        <a id="forkme_banner" href="https://github.com/roboptim">View on GitHub</a>
 
-          <h1 id="project_title">RobOptim</h1>
-          <h2 id="project_tagline">Numerical Optimization for Robotics</h2>
+        <h1 id="project_title">RobOptim</h1>
+        <h2 id="project_tagline">Numerical Optimization for Robotics</h2>
 
-        </header>
+      </header>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -46,8 +46,8 @@
 
 	<p>
 	  <em>RobOptim</em> is a set of packages designed to make robotics
-	  non-linear optimization problem easier to solve. It is composed of
-	  several packages which are focusing on different kind of problem related
+	  nonlinear optimization problems easier to solve. It is composed of
+	  several packages which are focusing on different kinds of problems related
 	  to robotics, especially humanoid robotics.
 	</p>
 
@@ -61,246 +61,311 @@
 
 	<h3>Libraries description</h3>
 
-    <dl>
-      <dt><a href="https://github.com/roboptim/roboptim-core"
-	     >roboptim-core</a></dt>
-      <dd>Generic C++ package used to solve non-linear optimization problem
-        (<em>not</em> robotics specific).</dd>
+        <dl>
+          <dt><a href="https://github.com/roboptim/roboptim-core"
+	         >roboptim-core</a></dt>
+          <dd>Generic C++ package used to solve nonlinear optimization problems
+            (<em>not</em> robotics specific).</dd>
 
+          <dt><a href="https://github.com/roboptim/roboptim-core-python"
+	         >roboptim-core-python</a></dt>
+          <dd>Python bindings for RobOptim Core.</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-core-python"
-	     >roboptim-core-python</a></dt>
-      <dd>Python bindings for RobOptim Core.</dd>
+          <dt>roboptim-core-cfsqp-plugin</dt>
+          <dd>Allows CFSQP solver to be used as a back end of roboptim-core
+	    (not distributed online due to the restrictive license of CFSQP,
+	    see CFSQP website for more information).</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-ipopt"
-	     >roboptim-core-plugin-ipopt</a></dt>
-      <dd>Allows Ipopt solvers to be used as a back-end of roboptim-core.</dd>
+          <dt><a href="https://github.com/roboptim/roboptim-core-plugin-cminpack"
+	         >roboptim-core-plugin-cminpack</a></dt>
+          <dd>Allows CMinPack to be used as a back end of roboptim-core.</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-cminpack"
-	     >roboptim-core-plugin-cminpack</a></dt>
-      <dd>Allows CMinPack to be used as a back-end of roboptim-core.</dd>
+          <dt><a href="https://github.com/roboptim/roboptim-core-plugin-eigen"
+	         >roboptim-core-plugin-eigen</a></dt>
+          <dd>Allows Eigen solvers to be used as a back end of roboptim-core.</dd>
 
-      <dt>roboptim-core-cfsqp-plugin</dt>
-      <dd>Allows CFSQP solver to be used as a back-end of roboptim-core
-	(not distributed on-line due to the restrictive license of CFSQP,
-	see CFSQP web site for more information).</dd>
+          <dt><a href="https://github.com/roboptim/roboptim-core-plugin-ipopt"
+	         >roboptim-core-plugin-ipopt</a></dt>
+          <dd>Allows Ipopt solvers to be used as a back end of roboptim-core.</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-core-plugin-nag"
-	     >roboptim-core-plugin-nag</a></dt>
-      <dd>Allows NAG solvers to be used as a back-end of roboptim-core.</dd>
+          <dt><a href="https://github.com/roboptim/roboptim-core-plugin-nag"
+	         >roboptim-core-plugin-nag</a></dt>
+          <dd>Allows NAG solvers to be used as a back end of roboptim-core.</dd>
 
-      <dt><a href="https://github.com/roboptim/roboptim-trajectory"
-	     >roboptim-trajectory</a></dt>
-      <dd>Trajectory optimization for robotics.</dd>
-    </dl>
+          <dt><a href="https://github.com/roboptim/roboptim-analysis"
+	         >roboptim-analysis</a></dt>
+          <dd>Analysis scripts for RobOptim logs.</dd>
 
-<h3>Releases</h3>
+          <dt><a href="https://github.com/roboptim/roboptim-trajectory"
+	         >roboptim-trajectory</a></dt>
+          <dd>Trajectory optimization for robotics.</dd>
 
-    <dl>
-      <dt>2013-06-11</dt> <dd>Release 2.0 of roboptim-core-plugin-ipopt
-	(<a href="https://github.com/roboptim/roboptim-core-plugin-ipopt/releases/tag/v2.0">download</a>).
-      </dd>
+        </dl>
 
-      <dt>2013-04-09</dt> <dd>Release 2.
-	(<a href="https://github.com/roboptim/roboptim-core/releases/tag/v2.0">download</a>).
-      </dd>
+        <h3>Releases</h3>
 
-      <dt>2009-11-16</dt> <dd>Release 0.4
-      (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.4">download</a>).
-      </dd>
+        <dl>
+          <dt>2013-06-11</dt> <dd>Release 2.0 of roboptim-core-plugin-ipopt
+	    (<a href="https://github.com/roboptim/roboptim-core-plugin-ipopt/releases/tag/v2.0">download</a>).
+          </dd>
 
-      <dt>2009-09-25</dt> <dd>Release 0.3
-      (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.3">download</a>).
-      </dd>
+          <dt>2013-04-09</dt> <dd>Release 2.
+	    (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v2.0">download</a>).
+          </dd>
 
-      <dt>2009-05-04</dt> <dd>Release 0.2: Update
-	<code>roboptim-core</code>, initial release
-	of <code>roboptim-core-plugin-ipopt</code>
-	and <code>roboptim-trajectory</code>.
-      </dd>
+          <dt>2009-11-16</dt> <dd>Release 0.4
+            (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.4">download</a>).
+          </dd>
 
-      <dt>2009-04-17</dt> <dd>Release 0.1: Initial release
-      of <code>roboptim-core</code>
-      (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.1">download</a>).</dd>
-    </dl>
+          <dt>2009-09-25</dt> <dd>Release 0.3
+            (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.3">download</a>).
+          </dd>
 
-    <h3>Documentation</h3>
+          <dt>2009-05-04</dt> <dd>Release 0.2: Update
+	    <code>roboptim-core</code>, initial release
+	    of <code>roboptim-core-plugin-ipopt</code>
+	    and <code>roboptim-trajectory</code>.
+          </dd>
 
-    <div class="block">
-      <h3>Core</h3>
-      <ul>
-        <li><a href="roboptim-core/doxygen/HEAD/">HTML (development version)
-	</a></li>
-        <li><a href="roboptim-core/doxygen/v2.0/">HTML (v2.0)
-	</a></li>
-	<li>
-	  Plug-ins:
-	  <ul>
-	    <li>Ipopt
+          <dt>2009-04-17</dt> <dd>Release 0.1: Initial release
+            of <code>roboptim-core</code>
+            (<a href="https://github.com/roboptim/roboptim-core/releases/tag/v0.1">download</a>).</dd>
+        </dl>
+
+        <h3>Documentation</h3>
+
+        <div class="block">
+          <h3>Core</h3>
+          <ul>
+            <li><a href="roboptim-core/doxygen/HEAD/">HTML (development version)
+	    </a></li>
+            <li><a href="roboptim-core/doxygen/v2.0/">HTML (v2.0)
+	    </a></li>
+	    <li>
+	      Plug-ins:
 	      <ul>
-		<li><a href="roboptim-core-plugin-ipopt/doxygen/HEAD/">HTML
-		    (development version)</a></li>
-		<li><a href="roboptim-core-plugin-ipopt/doxygen/v2.0/">HTML (v2.0)
-		</a></li>
+	        <li>CFSQP
+	          <ul>
+		    <li><a href="#">HTML
+		        (not yet available)</a></li>
+	          </ul>
+	        </li>
+
+	        <li>CMinPack
+	          <ul>
+		    <li><a href="roboptim-core-plugin-cminpack/doxygen/HEAD/">HTML
+		        (development version)</a></li>
+	          </ul>
+	        </li>
+
+	        <li>Eigen
+	          <ul>
+		    <li><a href="roboptim-core-plugin-eigen/doxygen/HEAD/">HTML
+		        (development version)</a></li>
+	          </ul>
+	        </li>
+
+	        <li>Ipopt
+	          <ul>
+		    <li><a href="roboptim-core-plugin-ipopt/doxygen/HEAD/">HTML
+		        (development version)</a></li>
+		    <li><a href="roboptim-core-plugin-ipopt/doxygen/v2.0/">HTML (v2.0)
+		    </a></li>
+	          </ul>
+	        </li>
+
+	        <li>NAG
+	          <ul>
+		    <li><a href="roboptim-core-plugin-nag/doxygen/HEAD/">HTML
+		        (development version)</a></li>
+	          </ul>
+	        </li>
 	      </ul>
 	    </li>
-	    <li>NAG
-	      <ul>
-		<li><a href="roboptim-core-plugin-nag/doxygen/HEAD/">HTML
-		    (development version)</a></li>
-	      </ul>
-	    </li>
-	    <li>CFSQP
-	      <ul>
-		<li><a href="#">HTML
-		(not yet available)</a></li>
-	      </ul>
-	      </li>
-	  </ul>
-	</li>
-      </ul>
+          </ul>
 
-      <h3>Trajectory</h3>
-      <ul>
-        <li><a href="roboptim-trajectory/doxygen/HEAD/">HTML
-	    (development version)</a></li>
-      </ul>
+          <h3>Trajectory</h3>
+          <ul>
+            <li><a href="roboptim-trajectory/doxygen/HEAD/">HTML
+	        (development version)</a></li>
+          </ul>
 
 
-      Documentation can also be generated through <code>make doc</code>.<br/>
-      If the package is installed on your system, this documentation should be available in
-      <code>/usr/share/doc/roboptim-core/doxygen-html</code>,
-      <code>/usr/share/doc/roboptim-trajectory/doxygen-html</code>.
-    </div>
+          Documentation can also be generated through <code>make doc</code>.<br/>
+          If the package is installed on your system, this documentation should be available in
+          <code>/usr/share/doc/roboptim-core/doxygen-html</code>,
+          <code>/usr/share/doc/roboptim-trajectory/doxygen-html</code>.
+        </div>
 
-    <h3>Download</h3>
+        <h3>Download</h3>
 
-    <p>
-      Releases are available
-      on <a href="http://www.github.com/roboptim/releases/">GitHub</a>
-      for download.
-    </p>
+        <p>
+          Releases are available
+          on <a href="http://www.github.com/roboptim/releases/">GitHub</a>
+          for download.
+        </p>
 
-    <p>
-      Oldest releases are available on
-      the <a href="https://sourceforge.net/project/showfiles.php?group_id=259573">SourceForge
-      space</a> for download.
-    </p>
+        <p>
+          Oldest releases are available on
+          the <a href="https://sourceforge.net/project/showfiles.php?group_id=259573">SourceForge
+            space</a> for download.
+        </p>
 
-    <p>
-      You can also retrieve the latest development version on
-      the <a href="https://github.com/roboptim">Git
-      repository</a>.
-    </p>
+        <p>
+          You can also retrieve the latest development versions on
+          the <a href="https://github.com/roboptim">Git
+            repository</a>.
+        </p>
 
-    <h3>Support and discussion</h3>
+        <h3>Support and discussion</h3>
 
-    The <a href="https://groups.google.com/forum/?fromgroups#!forum/roboptim"
-	   >RobOptim Google Group</a> provides support for this
-	   project.
-
-
-    <h3>Development</h3>
-
-    <p>Development branch (master) last build status and test coverage, thanks
-    to <a href="https://travis-ci.org/">travis-ci.org</a> and <a href="http://coveralls.io/">coveralls.io</a>.</p>
-    <table>
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core">
-	    roboptim-core</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core.png?branch=master" alt="roboptim-core build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-core?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-core/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-python">
-	    roboptim-core-python</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-python.png?branch=master" alt="roboptim-core-python build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-core-python?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-python/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack">
-	    roboptim-core-plugin-cminpack</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack.png?branch=master" alt="roboptim-core-plugin-cminpack build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-cminpack?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-cminpack/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt">
-	    roboptim-core-plugin-ipopt</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt.png?branch=master" alt="roboptim-core-plugin-ipopt build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-ipopt?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-ipopt/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-nag">
-	    roboptim-core-plugin-nag</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-nag.png?branch=master" alt="roboptim-core-plugin-nag build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-nag?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-nag/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
+        The <a href="https://groups.google.com/forum/?fromgroups#!forum/roboptim"
+	       >RobOptim Google Group</a> provides support for this
+	project.
 
 
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle">
-	  <a href="https://travis-ci.org/roboptim/roboptim-trajectory">
-	    roboptim-trajectory</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/roboptim/roboptim-trajectory.png?branch=master" alt="roboptim-trajectory build status"/>
-	  <a href='https://coveralls.io/r/roboptim/roboptim-trajectory?branch=master'>
-	    <img src='https://coveralls.io/repos/roboptim/roboptim-trajectory/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
+        <h3>Development</h3>
 
-    </table>
+        <p>Development branch (master) last build status and test coverage, thanks
+          to <a href="https://travis-ci.org/">travis-ci.org</a> and <a href="http://coveralls.io/">coveralls.io</a>.</p>
+        <table>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle;">
+	      <a href="https://github.com/roboptim/roboptim-core">
+	        roboptim-core</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core.png?branch=master" alt="roboptim-core build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-core/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-core-python">
+	        roboptim-core-python</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core-python">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core-python.png?branch=master" alt="roboptim-core-python build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core-python?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-core-python/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
 
-    <p>
-    Development statistics are provided by <a
-    href="https://www.ohloh.net/p/roboptim">Ohloh</a>.
-    </p>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-core-plugin-cminpack">
+	        roboptim-core-plugin-cminpack</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-cminpack.png?branch=master" alt="roboptim-core-plugin-cminpack build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-cminpack?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-cminpack/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
 
-    <div style="float: left; padding: 1em">
-      <script type="text/javascript"
-	      src="http://www.ohloh.net/p/338750/widgets/project_basic_stats.js"></script>
-    </div>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-core-plugin-eigen">
+	        roboptim-core-plugin-eigen</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-eigen">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-eigen.png?branch=master" alt="roboptim-core-plugin-eigen build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-eigen?branch=master'>
+	        <img src='https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.png' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
 
-    <div style="float: left; padding: 1em">
-    <script type="text/javascript"
-    src="http://www.ohloh.net/p/338750/widgets/project_languages.js"></script>
-    </div>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-core-plugin-ipopt">
+	        roboptim-core-plugin-ipopt</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-ipopt.png?branch=master" alt="roboptim-core-plugin-ipopt build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-ipopt?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-ipopt/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
 
-    <div style="clear: both">&nbsp;</div>
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-core-plugin-nag">
+	        roboptim-core-plugin-nag</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-core-plugin-nag">
+	        <img src="https://travis-ci.org/roboptim/roboptim-core-plugin-nag.png?branch=master" alt="roboptim-core-plugin-nag build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-core-plugin-nag?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-core-plugin-nag/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
+
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-analysis">
+	        roboptim-analysis</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-analysis">
+	        <img src="https://travis-ci.org/roboptim/roboptim-analysis.png?branch=master" alt="roboptim-analysis build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-analysis?branch=master'>
+	        <img src='https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_unknown.png' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
+
+          <tr>
+	    <td style="font-weight: bold; vertical-align: middle">
+	      <a href="https://github.com/roboptim/roboptim-trajectory">
+	        roboptim-trajectory</a>
+	    </td>
+	    <td style="width: 5em; padding: 0.8em; vertical-align: middle">
+	      <a href="https://travis-ci.org/roboptim/roboptim-trajectory">
+	        <img src="https://travis-ci.org/roboptim/roboptim-trajectory.png?branch=master" alt="roboptim-trajectory build status"/>
+	      </a>
+	      <a href='https://coveralls.io/r/roboptim/roboptim-trajectory?branch=master'>
+	        <img src='https://coveralls.io/repos/roboptim/roboptim-trajectory/badge.png?branch=master' alt='Coverage Status' />
+	      </a>
+	    </td>
+          </tr>
+
+        </table>
+
+        <p>
+          Development statistics are provided by <a
+                                                    href="https://www.ohloh.net/p/roboptim">Ohloh</a>.
+        </p>
+
+        <div style="float: left; padding: 1em">
+          <script type="text/javascript"
+	          src="http://www.ohloh.net/p/338750/widgets/project_basic_stats.js"></script>
+        </div>
+
+        <div style="float: left; padding: 1em">
+          <script type="text/javascript"
+                  src="http://www.ohloh.net/p/338750/widgets/project_languages.js"></script>
+        </div>
+
+        <div style="clear: both">&nbsp;</div>
 
       </section>
     </div>
