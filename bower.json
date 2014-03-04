@@ -1,0 +1,18 @@
+{
+  "name": "RobOptim",
+  "version": "0.0.0",
+  "homepage": "https://github.com/roboptim/roboptim.github.com",
+  "authors": [
+    "Thomas Moulard <thomas.moulard@gmail.com>"
+  ],
+  "description": "RobOptim website",
+  "license": "LGPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
