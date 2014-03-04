@@ -18,6 +18,13 @@
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+	    src="bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
   </head>
   <body>
       <div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -33,13 +40,13 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-	      {% for node in site.pages %}
-	      {% if page.url == node.url %}
-	      <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
-	      {% else %}
-	      <li><a href="{{node.url}}">{{node.title}}</a></li>
-	      {% endif %}
-	      {% endfor %}
+	      {% assign pages_list = site.pages %}
+	      {% assign group = 'navigation' %}
+	      {% include pages_list.html %}
+              <li><a href="https://groups.google.com/forum/#!forum/roboptim">
+		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
+              <li><a href="http://www.github.com/roboptim/">
+		  <span class="glyphicon glyphicon-download"></span> View on GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -47,6 +54,16 @@
 
       <div class="container">
 	{{ content }}
+      </div> <!-- /container -->
+
+      <div class="container">
+	<!-- FOOTER -->
+	<footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 Thomas Moulard &middot; <a href="http://www.github.com/roboptim">GitHub</a>
+	    &middot; <a href="http://www.github.com/roboptim/roboptim.github.com">Fork this website</a>
+	  </p>
+      </footer>
       </div> <!-- /container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
