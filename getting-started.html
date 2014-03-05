@@ -6,9 +6,302 @@ group: ""
 
 <h1 id="getting-started" class="page-header">{{ page.title }}</h1>
 
-<h2>Installing RobOptim</h2>
-
 <h2>Tutorial</h2>
 
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+<p>Solving a problem is done through several steps:
+
+<ul>
+  <li>Define your cost function by deriving one kind of function, depending
+   on whether or not you want to provide a jacobian and/or a hessian.</li>
+  <li>Define your constraints functions in the same manner.</li>
+  <li>Build an instance of problem matching your requirements.</li>
+  <li>Use one of the solvers to solve your problem.</li>
+</ul></p>
+
+<p>The following example defines a cost function F and two constraints
+G0 and G1.</p>
+
+<h3 id="problem">Problem definition</h3>
+
+<p>The problem that will be solved in this tutorial is the 71th
+problem of Hock-Schittkowski:
+
+$$min_{x \in \mathbb{R}^4} x_1 x_4 (x_1 + x_2 + x_3) + x_3$$
+
+with the following constraints:
+
+$$x_1 x_2 x_3 x_4 \geq 25$$
+$$x_1^2 + x_2^2 + x_3^2 + x_4^2 = 40$$
+$$1 \leq x_1, x_2, x_3, x_4 \leq 5$$
+</p>
+
+
+<h3 id="cost">Defining the cost function</h3>
+
+<p>The library contains the following hierarchy of functions:
+
+<ul>
+  <li><code>roboptim::Function</code></li>
+  <li><code>roboptim::DerivableFunction</code></li>
+  <li><code>roboptim::TwiceDerivableFunction</code></li>
+  <li><code>roboptim::QuadraticFunction</code></li>
+  <li><code>roboptim::LinearFunction</code></li>
+</ul></p>
+
+<p>These types correspond to dense vectors and matrices relying on
+Eigen. RobOptim also support dense matrices and you can even extend
+the framework to support your own types.</p>
+
+<p>When defining a new function, you have to derive your new function
+  from one of those classes. Depending on the class you derive from,
+  you will be have to implement one or several methods:
+
+<ul>
+  <li><code>impl_compute</code> that returns the function's result has
+    to be defined for all functions.</li>
+  <li><code>impl_gradient</code> which returns the function's gradient
+    is to be defined for DerivableFunction and its subclasses.</li>
+  <li><code>impl_hessian</code> for TwiceDerivableFunction functions and its subclasses.</li>
+</ul></p>
+
+<p>It is usually recommended to derive from the deepest possible class
+  of the hierarchy (deriving from TwiceDerivableFunction is better
+  than DerivableFunction).</p>
+
+<p>Keep in mind that the type of the function represents the amount of
+  information the solver will get, not the real nature of a function
+  (it is possible to avoid defining a hessian by deriving from
+  DerivableFunction, even if you function can be derived twice).</p>
+
+<p>In the following sample, a TwiceDifferentiableFunction will be
+  defined.</p>
+
+<pre><code class="cpp">
+struct F : public TwiceDifferentiableFunction
+{
+  F () : TwiceDifferentiableFunction (4, 1, "x₀ * x₃ * (x₀ + x₁ + x₂) + x₃")
+  {
+  }
+
+  void
+  impl_compute (result_t& result, const argument_t& x) const throw ()
+  {
+    result[0] = x[0] * x[3] * (x[0] + x[1] + x[2]) + x[3];
+  }
+
+  void
+  impl_gradient (gradient_t& grad, const argument_t& x, size_type) const throw ()
+  {
+    grad << x[0] * x[3] + x[3] * (x[0] + x[1] + x[2]),
+	    x[0] * x[3],
+	    x[0] * x[3] + 1,
+	    x[0] * (x[0] + x[1] + x[2]);
+  }
+
+  void
+  impl_hessian (hessian_t& h, const argument_t& x, size_type) const throw ()
+  {
+    h << 2 * x[3],               x[3], x[3], 2 * x[0] + x[1] + x[2],
+	 x[3],                   0.,   0.,   x[0],
+	 x[3],                   0.,   0.,   x[1],
+	 2 * x[0] + x[1] + x[2], x[0], x[0], 0.;
+  }
+};
+</code></pre>
+
+<h3 id="constraints">Defining the constraints</h3>
+
+<p>A constraint is no different from a cost function and can be
+defined in the same way than a cost function.</p>
+
+<p>The following sample defines two constraints which are twice
+derivable functions.</p>
+
+<pre><code class="cpp">
+struct G0 : public TwiceDifferentiableFunction
+{
+  G0 () : TwiceDifferentiableFunction (4, 1, "x₀ * x₁ * x₂ * x₃")
+  {
+  }
+
+  void
+  impl_compute (result_t& result, const argument_t& x) const throw ()
+  {
+    result[0] = x[0] * x[1] * x[2] * x[3];
+  }
+
+  void
+  impl_gradient (gradient_t& grad, const argument_t& x, size_type) const throw ()
+  {
+    grad &lt;&lt; x[1] * x[2] * x[3],
+	    x[0] * x[2] * x[3],
+	    x[0] * x[1] * x[3],
+	    x[0] * x[1] * x[2];
+  }
+
+  void
+  impl_hessian (hessian_t& h, const argument_t& x, size_type) const throw ()
+  {
+    h &lt;&lt; 0.,          x[2] * x[3], x[1] * x[3], x[1] * x[2],
+	 x[2] * x[3], 0.,          x[0] * x[3], x[0] * x[2],
+	 x[1] * x[3], x[0] * x[3], 0.,          x[0] * x[1],
+	 x[1] * x[2], x[0] * x[2], x[0] * x[1], 0.;
+  }
+};
+
+struct G1 : public TwiceDifferentiableFunction
+{
+  G1 () : TwiceDifferentiableFunction (4, 1, "x₀² + x₁² + x₂² + x₃²")
+  {
+  }
+
+  void
+  impl_compute (result_t& result, const argument_t& x) const throw ()
+  {
+    result[0] = x[0] * x[0] + x[1] * x[1] + x[2] * x[2] + x[3] * x[3];
+  }
+
+  void
+  impl_gradient (gradient_t& grad, const argument_t& x, size_type) const throw ()
+  {
+    grad = 2 * x;
+  }
+
+  void
+  impl_hessian (hessian_t& h, const argument_t& x, size_type) const throw ()
+  {
+    h &lt;&lt; 2., 0., 0., 0.,
+	 0., 2., 0., 0.,
+	 0., 0., 2., 0.,
+	 0., 0., 0., 2.;
+  }
+};
+</code></pre>
+
+<h3 id="problem">Building the problem and solving it</h3>
+
+<p>The last part of this tutorial covers how to build a problem and solve
+  it. The steps are:
+
+  <ul>
+    <li>Instanciate your functions (cost functions and constraints).</li>
+    <li>Pass them to the problem.</li>
+    <li>Optional: set a starting point.</li>
+    <li>Instanciate a solver which solves your class of problem.</li>
+    <li>Solve the problem by calling minimum.</li>
+  </ul>
+</p>
+
+<pre><code class="cpp">
+int run_test ()
+{
+  // Create cost function.
+  F f;
+
+  // Create problem.
+  solver_t::problem_t pb (f);
+
+  // Set bounds for all optimization parameters.
+  // 1. &lt; x_i &lt; 5. (x_i in [1.;5.])
+  for (Function::size_type i = 0; i &lt; pb.function ().inputSize (); ++i)
+    pb.argumentBounds ()[i] = Function::makeInterval (1., 5.);
+
+  // Set the starting point.
+  Function::vector_t start (pb.function ().inputSize ());
+  start[0] = 1., start[1] = 5., start[2] = 5., start[3] = 1.;
+
+  // Create constraints.
+  boost::shared_ptr&lt;G0&gt; g0 (new G0 ());
+  boost::shared_ptr&lt;G1&gt; g1 (new G1 ());
+
+  F::intervals_t bounds;
+  solver_t::problem_t::scales_t scales;
+
+  // Add constraints
+  bounds.push_back(Function::makeLowerInterval (25.));
+  scales.push_back (1.);
+  pb.addConstraint
+    (boost::static_pointer_cast&lt;TwiceDifferentiableFunction&gt; (g0),
+     bounds, scales);
+
+  bounds.clear ();
+  scales.clear ();
+
+  bounds.push_back(Function::makeInterval (40., 40.));
+  scales.push_back (1.);
+  pb.addConstraint
+    (boost::static_pointer_cast&lt;TwiceDifferentiableFunction&gt; (g1),
+     bounds, scales);
+
+  // Initialize solver.
+
+  // Here we are relying on a dummy solver.
+  // You may change this string to load the solver you wish to use:
+  //  - Ipopt: "ipopt", "ipopt-sparse", "ipopt-td"
+  //  - Eigen: "eigen-levenberg-marquardt"
+  //  etc.
+  // The plugin is built for a given solver type, so chose it adequately.
+  SolverFactory&lt;solver_t&gt; factory ("dummy-td", pb);
+  solver_t& solver = factory ();
+
+  // Compute the minimum and retrieve the result.
+  solver_t::result_t res = solver.minimum ();
+
+  // Display solver information.
+  std::cout &lt;&lt; solver &lt;&lt; std::endl;
+
+  // Check if the minimization has succeeded.
+
+  // Process the result
+  switch (res.which ())
+    {
+    case solver_t::SOLVER_VALUE:
+      {
+        // Get the result.
+        Result& result = boost::get&lt;Result&gt; (res);
+
+        // Display the result.
+        std::cout &lt;&lt; "A solution has been found: " &lt;&lt; std::endl
+                  &lt;&lt; result &lt;&lt; std::endl;
+
+        return 0;
+      }
+
+    case solver_t::SOLVER_VALUE_WARNINGS:
+      {
+        // Get the result.
+        ResultWithWarnings& result = boost::get&lt;ResultWithWarnings&gt; (res);
+
+        // Display the result.
+        std::cout &lt;&lt; "A solution has been found: " &lt;&lt; std::endl
+                  &lt;&lt; result &lt;&lt; std::endl;
+
+        return 0;
+      }
+
+    case solver_t::SOLVER_NO_SOLUTION:
+    case solver_t::SOLVER_ERROR:
+      {
+        std::cout &lt;&lt; "A solution should have been found. Failing..."
+                  &lt;&lt; std::endl
+                  &lt;&lt; boost::get&lt;SolverError&gt; (res).what ()
+                  &lt;&lt; std::endl;
+
+        return 2;
+      }
+    }
+
+  // Should never happen.
+  assert (0);
+  return 42;
+}
+</code></pre>
+
+<p>This is the last piece of code needed to instantiate and resolve an
+  optimization problem with this package.</p>
+
+<p>To see more usage examples, consider looking at the test directory of
+  the project which contains the project test suite.</p>
+
+<div style="padding: 2em"></div>
+
