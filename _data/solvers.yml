@@ -90,3 +90,33 @@
     name: KNITRO
     url: http://www.ziena.com/knitro.htm
   github: roboptim-core-plugin-knitro
+- name: LANCELOT
+  license: Free for Academic Use
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: LANCELOT
+    url: http://www.numerical.rl.ac.uk/lancelot/blurb.html
+  github: \#
+- name: SNOPT
+  license: Proprietary
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: SNOPT
+    url: http://www.sbsi-sol-optimize.com/asp/sol_product_snopt.htm
+  github: \#
+- name: Ceres (Google)
+  license: BSD
+  type: Nonlinear Least Squares
+  feature:
+    constraint: no
+  status: wanted
+  upstream:
+    name: Ceres
+    url: https://code.google.com/p/ceres-solver/
+  github: \#
