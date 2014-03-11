@@ -20,110 +20,22 @@ group: "navigation"
       </tr>
     </thead>
     <tbody>
-      <!-- Core -->
-      <tr id="roboptim-core" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core">RobOptim Core</a></td>
-	<td id="roboptim-core-travis-status">n/a</td>
-	<td id="roboptim-core-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core/badge.png?branch=master"
+      {% for package in site.data.packages %}
+      <tr id="{{ package.github }}" style="">
+	<td><a href="https://github.com/roboptim/{{ package.github }}">{{ package.name }}</a>
+	  {% if package.status == 'alpha' %}<sup>alpha</sup>{% endif %}
+	  {% if package.status == 'beta' %}<sup>beta</sup>{% endif %}
+	</td>
+	<td id="{{ package.github }}-travis-status">n/a</td>
+	<td id="{{ package.github }}-coveralls-status">
+	  <a href="https://coveralls.io/r/roboptim/{{ package.github }}?branch=master">
+	    <img src="https://coveralls.io/repos/roboptim/{{ package.github }}/badge.png?branch=master"
 		 alt="Coverage Status" />
 	</td>
-	<td id="roboptim-core-issues">n/a</td>
-	<td id="roboptim-core-pr">n/a</td>
+	<td id="{{ package.github }}-issues">n/a</td>
+	<td id="{{ package.github }}-pr">n/a</td>
       </tr>
-
-      <!-- Core Python -->
-      <tr id="roboptim-core-python" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core-python">RobOptim Core Python</a></td>
-	<td id="roboptim-core-python-travis-status">n/a</td>
-	<td id="roboptim-core-python-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core-python?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core-python/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-core-python-issues">n/a</td>
-	<td id="roboptim-core-python-pr">n/a</td>
-      </tr>
-
-      <!-- Plugin CMinPack -->
-      <tr id="roboptim-core-plugin-cminpack" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core-plugin-cminpack">RobOptim Core Plugin CMinPack</a></td>
-	<td id="roboptim-core-plugin-cminpack-travis-status">n/a</td>
-	<td id="roboptim-core-plugin-cminpack-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core-plugin-cminpack?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core-plugin-cminpack/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-core-plugin-cminpack-issues">n/a</td>
-	<td id="roboptim-core-plugin-cminpack-pr">n/a</td>
-      </tr>
-
-      <!-- Plugin Eigen -->
-      <tr id="roboptim-core-plugin-eigen" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core-plugin-eigen">RobOptim Core Plugin Eigen</a></td>
-	<td id="roboptim-core-plugin-eigen-travis-status">n/a</td>
-	<td id="roboptim-core-plugin-eigen-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core-plugin-eigen?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core-plugin-eigen/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-core-plugin-eigen-issues">n/a</td>
-	<td id="roboptim-core-plugin-eigen-pr">n/a</td>
-      </tr>
-
-      <!-- Plugin IPOPT -->
-      <tr id="roboptim-core-plugin-ipopt" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core-plugin-ipopt">RobOptim Core Plugin Ipopt</a></td>
-	<td id="roboptim-core-plugin-ipopt-travis-status">n/a</td>
-	<td id="roboptim-core-plugin-ipopt-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core-plugin-ipopt?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core-plugin-ipopt/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-core-plugin-ipopt-issues">n/a</td>
-	<td id="roboptim-core-plugin-ipopt-pr">n/a</td>
-      </tr>
-
-      <!-- Plugin NAG -->
-      <tr id="roboptim-core-plugin-nag" style="">
-	<td><a href="https://github.com/roboptim/roboptim-core-plugin-nag">RobOptim Core Plugin Nag</a></td>
-	<td id="roboptim-core-plugin-nag-travis-status">n/a</td>
-	<td id="roboptim-core-plugin-nag-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-core-plugin-nag?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-core-plugin-nag/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-core-plugin-nag-issues">n/a</td>
-	<td id="roboptim-core-plugin-nag-pr">n/a</td>
-      </tr>
-
-      <!-- Analysis -->
-       <tr id="roboptim-analysis" style="">
-	<td><a href="https://github.com/roboptim/roboptim-analysis">RobOptim Analysis</a></td>
-	<td id="roboptim-analysis-travis-status">n/a</td>
-	<td id="roboptim-analysis-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-analysis?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-analysis/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-analysis-issues">n/a</td>
-	<td id="roboptim-analysis-pr">n/a</td>
-      </tr>
-
-       <!-- Trajectory -->
-      <tr id="roboptim-trajectory" style="">
-	<td><a href="https://github.com/roboptim/roboptim-trajectory">RobOptim Trajectory</a></td>
-	<td id="roboptim-trajectory-travis-status">n/a</td>
-	<td id="roboptim-trajectory-coveralls-status">
-	  <a href="https://coveralls.io/r/roboptim/roboptim-trajectory?branch=master">
-	    <img src="https://coveralls.io/repos/roboptim/roboptim-trajectory/badge.png?branch=master"
-		 alt="Coverage Status" />
-	</td>
-	<td id="roboptim-trajectory-issues">n/a</td>
-	<td id="roboptim-trajectory-pr">n/a</td>
-      </tr>
-
+      {% endfor %}
     </tbody>
   </table>
 

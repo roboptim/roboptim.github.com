@@ -13,59 +13,27 @@ group: "navigation"
     <thead>
       <tr>
 	<td><em>Package</em></td>
-	<td>Version</td>
+	<td>Last Release</td>
 	<td>Git URL</td>
       </tr>
     </thead>
     <tbody>
-      <!-- Core -->
-      <tr id="roboptim-core" style="">
-	<td id="roboptim-core-dl-link">Roboptim Core</td>
-	<td id="roboptim-core-version">n/a</td>
-	<td id="roboptim-core-git-url">https://github.com/roboptim/roboptim-core.git</td>
+      {% for package in site.data.packages %}
+      {% if package.status == 'stable' %}
+      <tr id="{{ package.github }}">
+	<td id="{{ package.github }}-dl-link">{{ package.name }}</td>
+	<td id="{{ package.github }}-version">
+	  {% for version in package.releases %}
+	  <a href="https://github.com/roboptim/roboptim-core/releases/tag/v{{ version }}">{{ version }}</a>
+	  {% endfor %}
+	  {% unless package.releases.size %}
+	  n/a
+	  {% endunless %}
+	</td>
+	<td id="{{ package.github }}-git-url">https://github.com/roboptim/{{ package.github }}.git</td>
       </tr>
-      <!-- Core Python -->
-      <tr id="roboptim-core-python" style="">
-	<td id="roboptim-core-python-dl-link">RobOptim Core Python</td>
-	<td id="roboptim-core-python-version">n/a</td>
-	<td id="roboptim-core-python-git-url">https://github.com/roboptim/roboptim-core-python.git</td>
-      </tr>
-      <!-- Core Plugin CMinPack -->
-      <tr id="roboptim-core-plugin-cminpack" style="">
-	<td id="roboptim-core-plugin-cminpack-dl-link">RobOptim Core Plugin CMinPack</td>
-	<td id="roboptim-core-plugin-cminpack-version">n/a</td>
-	<td id="roboptim-core-plugin-cminpack-git-url">https://github.com/roboptim/roboptim-core-plugin-cminpack.git</td>
-      </tr>
-      <!-- Core Plugin Eigen -->
-      <tr id="roboptim-core-plugin-eigen" style="">
-	<td id="roboptim-core-plugin-eigen-dl-link">RobOptim Core Plugin Eigen</td>
-	<td id="roboptim-core-plugin-eigen-version">n/a</td>
-	<td id="roboptim-core-plugin-eigen-git-url">https://github.com/roboptim/roboptim-core-plugin-eigen.git</td>
-      </tr>
-      <!-- Core Plugin IPOPT -->
-      <tr id="roboptim-core-plugin-ipopt" style="">
-	<td id="roboptim-core-plugin-ipopt-dl-link">RobOptim Core Plugin Ipopt</td>
-	<td id="roboptim-core-plugin-ipopt-version">n/a</td>
-	<td id="roboptim-core-plugin-ipopt-git-url">https://github.com/roboptim/roboptim-core-plugin-ipopt.git</td>
-      </tr>
-      <!-- Core Plugin NAG -->
-      <tr id="roboptim-core-plugin-nag" style="">
-	<td id="roboptim-core-plugin-nag-dl-link">RobOptim Core Plugin NAG</td>
-	<td id="roboptim-core-plugin-nag-version">n/a</td>
-	<td id="roboptim-core-plugin-nag-git-url">https://github.com/roboptim/roboptim-core-plugin-nag.git</td>
-      </tr>
-      <!-- Analysis -->
-      <tr id="roboptim-analysis" style="">
-	<td id="roboptim-analysis-dl-link">RobOptim Analysis</td>
-	<td id="roboptim-analysis-version">n/a</td>
-	<td id="roboptim-analysis-git-url">https://github.com/roboptim/roboptim-analysis.git</td>
-      </tr>
-      <!-- Trajectory -->
-      <tr id="roboptim-trajectory" style="">
-	<td id="roboptim-trajectory-dl-link">RobOptim Trajectory</td>
-	<td id="roboptim-trajectory-version">n/a</td>
-	<td id="roboptim-trajectory-git-url">https://github.com/roboptim/roboptim-trajectory.git</td>
-      </tr>
+      {% endif %}
+      {% endfor %}
     </tbody>
   </table>
 </div>
@@ -94,21 +62,3 @@ group: "navigation"
 <p>RobOptim is also available as a RobotPkg package.</p>
 
 <div style="padding: 10em"></div>
-
-<script type="text/javascript">
-  var projects = ["roboptim-core", "roboptim-core-python",
-  "roboptim-core-plugin-cminpack", "roboptim-core-plugin-eigen",
-  "roboptim-core-plugin-ipopt", "roboptim-core-plugin-nag",
-  "roboptim-analysis", "roboptim-trajectory"];
-
-  $.each(projects, function(index, project) {
-  var url = "https://api.github.com/repos/roboptim/" + project + "/releases";
-  $.get(url, function (data) {
-  var release = data[0];
-  var dlUrl = data[0].html_url;
-  var content = data[0].tag_name;
-  content = "<a href='" + dlUrl + "'>" + content + "</a>";
-  $("#" + project + "-version").html(content);
-  });
-  });
-</script>

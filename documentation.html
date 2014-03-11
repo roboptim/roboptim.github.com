@@ -6,59 +6,33 @@ group: "navigation"
 
 <h1 id="documentation" class="page-header">{{ page.title }}</h1>
 
-<h2>Core</h2>
-<ul>
-  <li><a href="roboptim-core/doxygen/HEAD/">HTML (development version)
-  </a></li>
-  <li><a href="roboptim-core/doxygen/v2.0/">HTML (v2.0)
-  </a></li>
-  <li>
-    Supported Solvers (plug-ins):
-    <ul>
-      <li>CFSQP
-	<ul>
-	  <li><a href="#">HTML
-	      (not yet available)</a></li>
-	</ul>
-      </li>
-
-      <li>CMinPack
-	<ul>
-	  <li><a href="roboptim-core-plugin-cminpack/doxygen/HEAD/">HTML
-	      (development version)</a></li>
-	</ul>
-      </li>
-
-      <li>Eigen
-	<ul>
-	  <li><a href="roboptim-core-plugin-eigen/doxygen/HEAD/">HTML
-	      (development version)</a></li>
-	</ul>
-      </li>
-
-      <li>Ipopt
-	<ul>
-	  <li><a href="roboptim-core-plugin-ipopt/doxygen/HEAD/">HTML
-	      (development version)</a></li>
-	  <li><a href="roboptim-core-plugin-ipopt/doxygen/v2.0/">HTML (v2.0)
-	  </a></li>
-	</ul>
-      </li>
-
-      <li>NAG
-	<ul>
-	  <li><a href="roboptim-core-plugin-nag/doxygen/HEAD/">HTML
-	      (development version)</a></li>
-	</ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-<h2>Trajectory</h2>
-<ul>
-  <li><a href="roboptim-trajectory/doxygen/HEAD/">HTML
-      (development version)</a></li>
-</ul>
+<div class="table-responsive">
+  <table class="table table-condensed" id="status">
+    <thead>
+      <tr>
+	<td width="30%"><em>Package</em></td>
+	<td>Documentation</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for package in site.data.packages %}
+      {% unless package.status == 'alpha' %}
+      <tr id="{{ package.github }}">
+	<td id="{{ package.github }}-name">{{ package.name }}
+	  {% if package.status == 'beta' %}<sup>beta</sup>{% endif %}
+	</td>
+	<td id="{{ package.github }}-doc">
+	  <a href="{{ package.github}}/doxygen/HEAD/">git</a>
+	  {% for version in package.releases %}
+	  , <a href="{{ package.github}}/doxygen/v{{ version }}">v{{ version }}</a>
+	  {% endfor %}
+	</td>
+      </tr>
+      {% endunless %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 <div class="bs-callout bs-callout-info">
   <h4>Finding the documentation on your system</h4>
@@ -68,3 +42,5 @@ group: "navigation"
     in <code>/usr/share/doc/roboptim-core/doxygen-html</code>,
     <code>/usr/share/doc/roboptim-trajectory/doxygen-html</code></p>
 </div>
+
+<div style="padding: 10em"></div>
