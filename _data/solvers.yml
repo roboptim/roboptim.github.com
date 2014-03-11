@@ -1,0 +1,92 @@
+- name: CFSQP
+  license: Proprietary
+  type: Nonlinear (Sequential)
+  feature:
+    constraint: yes
+  status: supported
+  upstream:
+    name: aemdesign.com (down)
+    url: \#
+  github: false
+- name: IPOPT
+  license: EPL
+  type: Nonlinear (Interior Point)
+  feature:
+    constraint: yes
+  status: supported
+  upstream:
+    name: COIN-OR
+    url: https://projects.coin-or.org/Ipopt
+  github: roboptim-core-plugin-ipopt
+- name: CMinPack
+  license: Proprietary
+  type: Nonlinear Least Squares
+  feature:
+    constraint: no
+  status: supported
+  upstream:
+    name: C/C++ MinPack
+    url: http://devernay.free.fr/hacks/cminpack/index.html
+  github: roboptim-core-plugin-cminpack
+- name: NAG
+  license: Proprietary
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: supported
+  upstream:
+    name: NAG website
+    url: http://www.nag.com/numeric/CL/CLdescription.asp
+  github: roboptim-core-plugin-nag
+
+- name: Eigen
+  license: MPL2
+  type: Nonlinear Least Squares (Levenberg Marquardt)
+  feature:
+    constraint: no
+  status: experimental
+  upstream:
+    name: Eigen
+    url: http://eigen.tuxfamily.org/index.php?title=Main_Page
+  github: roboptim-core-plugin-eigen
+- name: CMA-ES
+  license: LGPL
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: experimental
+  upstream:
+    name: CMA-ES
+    url: https://www.lri.fr/~hansen/cmaesintro.html
+  github: roboptim-core-plugin-nlopt
+- name: NLopt
+  license: LGPL
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: experimental
+  upstream:
+    name: NLopt
+    url: http://ab-initio.mit.edu/wiki/index.php/NLopt
+  github: roboptim-core-plugin-nlopt
+
+- name: MOSEK
+  license: Proprietary
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: MOSEK
+    url: http://www.mosek.com/
+  github: roboptim-core-plugin-mosek
+- name: KNITRO
+  license: Proprietary
+  type: Nonlinear
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: KNITRO
+    url: http://www.ziena.com/knitro.htm
+  github: roboptim-core-plugin-knitro

@@ -1,0 +1,152 @@
+---
+layout: default
+title: Solvers
+group: "navigation"
+---
+
+<h1 id="solvers" class="page-header">{{ page.title }}</h1>
+
+<h2>Supported Solvers</h2>
+
+<p>These solvers have been used to solve full scale robotics
+problem. Bugs may remain but the RobOptim plug-ins are considered
+stable enough to be used.</p>
+
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="supported">
+    <thead>
+      <tr>
+	<td><em>Solver name</em></td>
+	<td>Type</td>
+	<td>Constraints</td>
+	<td>License</td>
+	<td>Upstream Website</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for solver in site.data.solvers %}
+      {% if solver.status == 'supported' %}
+      <tr>
+	<td>
+	  {% if solver.github != false %}
+	  <a href="https://github.com/roboptim/{{ solver.github }}">
+	    {{ solver.name }}
+	  </a>
+	  {% else %}
+	  {{ solver.name }}
+	  {% endif %}
+	</td>
+	<td>{{ solver.type }}</td>
+	<td>
+	  {% if solver.feature.constraint %}
+	  <span class="glyphicon glyphicon-ok"></span>
+	  {% else %}
+	  <span class="glyphicon glyphicon-remove"></span>
+	  {% endif %}
+	</td>
+	<td>{{ solver.license }}</td>
+	<td><a href="{{ solver.upstream.url }}">{{ solver.upstream.name }}</a</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>Experimental Solvers</h2>
+
+<p>These solvers are available as technology preview. Depending on the
+package, they may be usable or not and you should probably contact the
+author before trying to use them.</p>
+
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="supported">
+    <thead>
+      <tr>
+	<td><em>Solver name</em></td>
+	<td>Type</td>
+	<td>Constraints</td>
+	<td>License</td>
+	<td>Upstream Website</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for solver in site.data.solvers %}
+      {% if solver.status == 'experimental' %}
+      <tr>
+	<td>
+	  {% if solver.github != false %}
+	  <a href="https://github.com/roboptim/{{ solver.github }}">
+	    {{ solver.name }}
+	  </a>
+	  {% else %}
+	  {{ solver.name }}
+	  {% endif %}
+	</td>
+	<td>{{ solver.type }}</td>
+	<td>
+	  {% if solver.feature.constraint %}
+	  <span class="glyphicon glyphicon-ok"></span>
+	  {% else %}
+	  <span class="glyphicon glyphicon-remove"></span>
+	  {% endif %}
+	</td>
+	<td>{{ solver.license }}</td>
+	<td><a href="{{ solver.upstream.url }}">{{ solver.upstream.name }}</a</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>Wanted Solvers</h2>
+
+<p>Writing a new plug-in is relatively easy, please consider
+  contribute a plug-in for one of these popular solvers:</p>
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="wanted">
+    <thead>
+      <tr>
+	<td><em>Solver name</em></td>
+	<td>Type</td>
+	<td>Constraints</td>
+	<td>License</td>
+	<td>Upstream Website</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for solver in site.data.solvers %}
+      {% if solver.status == 'wanted' %}
+      <tr>
+	<td>
+	  {% if solver.github != false %}
+	  <a href="https://github.com/roboptim/{{ solver.github }}">
+	    {{ solver.name }}
+	  </a>
+	  {% else %}
+	  {{ solver.name }}
+	  {% endif %}
+	</td>
+	<td>{{ solver.type }}</td>
+	<td>
+	  {% if solver.feature.constraint %}
+	  <span class="glyphicon glyphicon-ok"></span>
+	  {% else %}
+	  <span class="glyphicon glyphicon-remove"></span>
+	  {% endif %}
+	</td>
+	<td>{{ solver.license }}</td>
+	<td><a href="{{ solver.upstream.url }}">{{ solver.upstream.name }}</a</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div style="padding: 2em"></div>
+
