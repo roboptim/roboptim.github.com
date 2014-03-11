@@ -68,18 +68,19 @@ group: "navigation"
       </tr>
     </tbody>
   </table>
+</div>
 
-
-  <div class="bs-callout bs-callout-info">
-    <h4>If you clone our Git repositories...</h4>
-    <p>RobOptim repositories use submodules, if you clone them, do not
+<div class="bs-callout bs-callout-info">
+  <h4>If you clone our Git repositories...</h4>
+  <p>RobOptim repositories use submodules, if you clone them, do not
     forget to pass the <code>--recursive</code> option: <code>$ git
-    clone --recursive https://github.com/...</code></p>
-  </div>
+      clone --recursive https://github.com/...</code></p>
+</div>
 
-  <h2>Supported Linux Distribution</h2>
 
-  <p>If you do not need recent features, we recommend you use the
+<h2>Supported Linux Distribution</h2>
+
+<p>If you do not need recent features, we recommend you use the
   packages provided by your Linux distribution. RobOptim is available
   on the following Linux Distributions:
   <ul>
@@ -88,28 +89,26 @@ group: "navigation"
     <li>Debian</li>
     <li>Ubuntu</li>
   </ul>
-  </p>
+</p>
 
-  <p>RobOptim is also available as a RobotPkg package.</p>
+<p>RobOptim is also available as a RobotPkg package.</p>
 
-  <div style="padding: 10em"></div>
+<div style="padding: 10em"></div>
 
-  <script type="text/javascript">
-    var projects = ["roboptim-core", "roboptim-core-python",
-    "roboptim-core-plugin-cminpack", "roboptim-core-plugin-eigen",
-    "roboptim-core-plugin-ipopt", "roboptim-core-plugin-nag",
-    "roboptim-analysis", "roboptim-trajectory"];
+<script type="text/javascript">
+  var projects = ["roboptim-core", "roboptim-core-python",
+  "roboptim-core-plugin-cminpack", "roboptim-core-plugin-eigen",
+  "roboptim-core-plugin-ipopt", "roboptim-core-plugin-nag",
+  "roboptim-analysis", "roboptim-trajectory"];
 
-    $.each(projects, function(index, project) {
-      var url = "https://api.github.com/repos/roboptim/" + project + "/releases";
-      $.get(url, function (data) {
-          var release = data[0];
-          var dlUrl = data[0].html_url;
-          var content = data[0].tag_name;
-          content = "<a href='" + dlUrl + "'>" + content + "</a>";
-          $("#" + project + "-version").html(content);
-      });
-    });
-  </script>
-</div>
-
+  $.each(projects, function(index, project) {
+  var url = "https://api.github.com/repos/roboptim/" + project + "/releases";
+  $.get(url, function (data) {
+  var release = data[0];
+  var dlUrl = data[0].html_url;
+  var content = data[0].tag_name;
+  content = "<a href='" + dlUrl + "'>" + content + "</a>";
+  $("#" + project + "-version").html(content);
+  });
+  });
+</script>
