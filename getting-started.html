@@ -12,7 +12,7 @@ group: "navigation"
 
 <ul>
   <li>Define your cost function by deriving one kind of function, depending
-   on whether or not you want to provide a jacobian and/or a hessian.</li>
+   on whether or not you want to provide a Jacobian and/or a Hessian.</li>
   <li>Define your constraints functions in the same manner.</li>
   <li>Build an instance of problem matching your requirements.</li>
   <li>Use one of the solvers to solve your problem.</li>
@@ -49,12 +49,12 @@ $$1 \leq x_1, x_2, x_3, x_4 \leq 5$$
 </ul></p>
 
 <p>These types correspond to dense vectors and matrices relying on
-Eigen. RobOptim also support dense matrices and you can even extend
+Eigen. RobOptim also support sparse matrices and you can even extend
 the framework to support your own types.</p>
 
 <p>When defining a new function, you have to derive your new function
-  from one of those classes. Depending on the class you derive from,
-  you will be have to implement one or several methods:
+  from one of these classes. Depending on the class you derive from,
+  you will have to implement one or several methods:
 
 <ul>
   <li><code>impl_compute</code> that returns the function's result has
@@ -70,8 +70,8 @@ the framework to support your own types.</p>
 
 <p>Keep in mind that the type of the function represents the amount of
   information the solver will get, not the real nature of a function
-  (it is possible to avoid defining a hessian by deriving from
-  DerivableFunction, even if you function can be derived twice).</p>
+  (it is possible to avoid defining a Hessian by deriving from
+  DerivableFunction, even if your function can be derived twice).</p>
 
 <p>In the following sample, a TwiceDifferentiableFunction will be
   defined.</p>
@@ -114,8 +114,8 @@ struct F : public TwiceDifferentiableFunction
 <p>A constraint is no different from a cost function and can be
 defined in the same way than a cost function.</p>
 
-<p>The following sample defines two constraints which are twice
-derivable functions.</p>
+<p>The following sample defines two constraints which are twice-derivable
+functions.</p>
 
 {% highlight c++ %}
 struct G0 : public TwiceDifferentiableFunction
@@ -240,7 +240,7 @@ int run_test ()
   //  - Ipopt: "ipopt", "ipopt-sparse", "ipopt-td"
   //  - Eigen: "eigen-levenberg-marquardt"
   //  etc.
-  // The plugin is built for a given solver type, so chose it adequately.
+  // The plugin is built for a given solver type, so choose it adequately.
   SolverFactory<solver_t> factory ("dummy-td", pb);
   solver_t& solver = factory ();
 

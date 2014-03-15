@@ -41,7 +41,7 @@
 
 - name: Eigen
   license: MPL2
-  type: Nonlinear Least Squares (Levenberg Marquardt)
+  type: Nonlinear Least Squares (Levenberg-Marquardt)
   feature:
     constraint: no
   status: experimental
@@ -51,7 +51,7 @@
   github: roboptim-core-plugin-eigen
 - name: CMA-ES
   license: LGPL
-  type: Nonlinear
+  type: Nonlinear (Evolutionary)
   feature:
     constraint: yes
   status: experimental
