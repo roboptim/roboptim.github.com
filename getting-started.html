@@ -26,13 +26,13 @@ G0 and G1.</p>
 <p>The problem that will be solved in this tutorial is the 71th
 problem of Hock-Schittkowski:
 
-$$min_{x \in \mathbb{R}^4} x_1 x_4 (x_1 + x_2 + x_3) + x_3$$
+$$min_{x \in \mathbb{R}^4} x_0 x_3 (x_0 + x_1 + x_2) + x_2$$
 
 with the following constraints:
 
-$$x_1 x_2 x_3 x_4 \geq 25$$
-$$x_1^2 + x_2^2 + x_3^2 + x_4^2 = 40$$
-$$1 \leq x_1, x_2, x_3, x_4 \leq 5$$
+$$x_0 x_1 x_2 x_3 \geq 25$$
+$$x_0^2 + x_1^2 + x_2^2 + x_3^2 = 40$$
+$$1 \leq x_0, x_1, x_2, x_3 \leq 5$$
 </p>
 
 
@@ -298,7 +298,38 @@ int run_test ()
 {% endhighlight %}
 
 <p>This is the last piece of code needed to instantiate and resolve an
-  optimization problem with this package.</p>
+  optimization problem with this package. Running this piece of code with an
+  appropriate solver set, you will get:</p>
+
+{% highlight text %}
+Solver:
+  Problem:
+    x₀ x₃ (x₀ + x₁ + x₂) + x₂ (twice differentiable function)
+    Argument's bounds: (1, 5), (1, 5), (1, 5), (1, 5)
+    Argument's scales: 1, 1, 1, 1
+    Number of constraints: 2
+    Constraint 0
+        x₀ x₁ x₂ x₃ (twice differentiable function)
+        Bounds: (25, inf)
+        Scales: 1
+        Initial value: [1](25)
+    Constraint 1
+        x₀² + x₁² + x₂² + x₃² (twice differentiable function)
+        Bounds: (40, 40)
+        Scales: 1
+        Initial value: [1](52) (constraint not satisfied)
+    Starting point: [4](1,5,5,1)
+    Starting value: [1](16)
+    Infinity value (for all functions): inf
+
+A solution has been found:
+Result:
+  Size (input, output): 4, 1
+  X: [4](1,4.743,3.82115,1.37941)
+  Value: [1](17.014)
+  Constraints values: [2](25,40)
+  Lambda: [2](-0.552294,0.161469)
+{% endhighlight %}
 
 <p>To see more usage examples, consider looking at the test directory of
   the project which contains the project test suite.</p>
