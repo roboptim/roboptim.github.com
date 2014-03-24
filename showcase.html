@@ -1,0 +1,57 @@
+---
+layout: default
+title: Showcase
+group: "navigation"
+---
+
+<h1 id="showcase" class="page-header">{{ page.title }}</h1>
+
+<h2>Papers</h2>
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="status">
+    <thead>
+      <tr>
+	<td>Title</td>
+	<td>Authors</td>
+	<td>Conference/Book</td>
+	<td>Year</td>
+	<td>File</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for paper in site.data.papers %}
+      <tr id="{{ paper.id }}">
+	<td id="{{ paper.id }}-title">{{ paper.title }}</td>
+	<td id="{{ paper.id }}-authors">
+	  {% for author in paper.author %}
+	  {{ author.given | truncate: 1, ''}}.
+	  {% if forloop.index < forloop.length %}
+		{{author.family}},
+		{% else %}
+		{{author.family}}
+		{% endif %}
+		{% endfor %}
+	</td>
+	<td id="{{ paper.id }}-book-title">{{paper.container-title}}</td>
+	<td id="{{ paper.id }}-year">{{paper.year}}</td>
+	<td id="{{ paper.id }}-url">
+	  {% if paper.URL %}
+	  <a href="{{ paper.URL }}" target="_blank">
+            <span class='glyphicon glyphicon-file'></span>
+	  </a>
+	  {% endif %}
+	</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!--
+<div style="padding: 2em"></div>
+
+<h2>Software</h2>
+-->
+
+<div style="padding: 10em"></div>

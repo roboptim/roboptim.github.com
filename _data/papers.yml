@@ -1,0 +1,32 @@
+- id: moulard:robomec:2013
+  title: "RobOptim: an Optimization Framework for Robotics"
+  author:
+  - family: Moulard
+    given: Thomas
+  - family: Lamiraux
+    given: Florent
+  - family: Bouyarmane
+    given: Karim
+  - family: Yoshida
+    given: Eiichi
+  year: 2013
+  container-title: Robotics and Mechatronics Conference (Robomec'2013)
+  type: book
+  URL: http://hal.archives-ouvertes.fr/hal-00802083
+- id: brossette:cisram:2013
+  title: "Point-Cloud Multi-Contact Planning for Humanoids: Preliminary Results"
+  author:
+  - family: Brossette
+    given: Stanislas
+  - family: Vaillant
+    given: Joris
+  - family: Keith
+    given: François
+  - family: Escande
+    given: Adrien
+  - family: Kheddar
+    given: Abderrahmane
+  year: 2013
+  container-title: Cybernetics and Intelligent Systems Robotics, Automation and Mechatronics (CISRAM'2013)
+  type: book
+  URL: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00863931
