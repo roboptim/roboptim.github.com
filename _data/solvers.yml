@@ -69,6 +69,16 @@
     name: NLopt
     url: http://ab-initio.mit.edu/wiki/index.php/NLopt
   github: roboptim-core-plugin-nlopt
+- name: PaGMO
+  license: GPLv3
+  type: Nonlinear (Evolutionary)
+  feature:
+    constraint: yes
+  status: experimental
+  upstream:
+    name: PaGMO
+    url: https://github.com/esa/pagmo
+  github: roboptim-core-plugin-pagmo
 
 - name: MOSEK
   license: Proprietary
@@ -119,14 +129,4 @@
   upstream:
     name: Ceres
     url: https://code.google.com/p/ceres-solver/
-  github: \#
-- name: PaGMO
-  license: GPLv3
-  type: Nonlinear
-  feature:
-    constraint: yes
-  status: wanted
-  upstream:
-    name: PaGMO
-    url: https://github.com/esa/pagmo
   github: \#

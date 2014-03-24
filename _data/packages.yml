@@ -34,6 +34,10 @@
   github: roboptim-core-plugin-nlopt
   status: alpha
 
+- name: RobOptim Core Plugin PaGMO
+  github: roboptim-core-plugin-pagmo
+  status: alpha
+
 - name: RobOptim Core Plugin MOSEK
   github: roboptim-core-plugin-mosek
   status: alpha
