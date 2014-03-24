@@ -77,6 +77,15 @@ the framework to support your own types.</p>
   defined.</p>
 
 {% highlight c++ %}
+#include <boost/shared_ptr.hpp>
+
+#include <roboptim/core/twice-differentiable-function.hh>
+#include <roboptim/core/io.hh>
+#include <roboptim/core/solver.hh>
+#include <roboptim/core/solver-factory.hh>
+
+using namespace roboptim;
+
 struct F : public TwiceDifferentiableFunction
 {
   F () : TwiceDifferentiableFunction (4, 1, "x₀ * x₃ * (x₀ + x₁ + x₂) + x₂")
