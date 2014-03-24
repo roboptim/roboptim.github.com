@@ -79,14 +79,14 @@ the framework to support your own types.</p>
 {% highlight c++ %}
 struct F : public TwiceDifferentiableFunction
 {
-  F () : TwiceDifferentiableFunction (4, 1, "x₀ * x₃ * (x₀ + x₁ + x₂) + x₃")
+  F () : TwiceDifferentiableFunction (4, 1, "x₀ * x₃ * (x₀ + x₁ + x₂) + x₂")
   {
   }
 
   void
   impl_compute (result_t& result, const argument_t& x) const throw ()
   {
-    result[0] = x[0] * x[3] * (x[0] + x[1] + x[2]) + x[3];
+    result[0] = x[0] * x[3] * (x[0] + x[1] + x[2]) + x[2];
   }
 
   void
