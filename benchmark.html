@@ -19,15 +19,19 @@ sitemap:
 <div class="bs-callout bs-callout-info">
   <h4>Methodology</h4>
   <ol>
-    <li>Run the RobOptim test suite for each solver, the Hock-Schittkowski Collection
-    problems are included, see
-    the <a href="https://github.com/roboptim/roboptim-shared-tests">roboptim-shared-tests</a>
-    repository to see the actual implementation.</li>
+    <li>Run the RobOptim test suite for each solver, the
+      Hock-Schittkowski Collection problems are included, see
+      the <a href="https://github.com/roboptim/roboptim-shared-tests">roboptim-shared-tests</a>
+      repository to see the actual implementation. The "b" versions
+      correspond to minor variations of a same problem but using the
+      RobOptim in a different manner.
+    </li>
+
     <li>Convert the RobOptim log files, i.e. <code>journal.log</code>, to a
-    YAML file
-    using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a>.</li>
+      YAML file
+      using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a>.</li>
     <li>Tests for which solvers are failing are finally removed from
-    the dataset (manually for now).</li>
+      the dataset (manually for now).</li>
   </ol>
 
   <p>The log file timing information are generated
