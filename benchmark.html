@@ -19,13 +19,13 @@ sitemap:
 <div class="bs-callout bs-callout-info">
   <h4>Methodology</h4>
   <ol>
-    <li>Run the RobOptim test suite for each solver, the Schittkowski
+    <li>Run the RobOptim test suite for each solver, the Hock-Schittkowski Collection
     problems are included, see
     the <a href="https://github.com/roboptim/roboptim-shared-tests">roboptim-shared-tests</a>
     repository to see the actual implementation.</li>
     <li>Convert the RobOptim log files, i.e. <code>journal.log</code>, to a
     YAML file
-    using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a></li>
+    using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a>.</li>
     <li>Tests for which solvers are failing are finally removed from
     the dataset (manually for now).</li>
   </ol>
@@ -37,9 +37,11 @@ sitemap:
   <p>The tests provided here are too small to test sparse solvers in
     a robust way. Values for these solvers should be handled with
     great care!</p>
+
+  <p><a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">The
+  document defining all the problems is available here.</a></p>
 </div>
 
-<!--Div that will hold the pie chart-->
 <div id="benchmark_schittkowski" style="width: 100%; height: 300em"></div>
 
 <!--Load the AJAX API-->
@@ -153,7 +155,10 @@ sitemap:
   }
 
   for (var problem in benchmark["schittkowski"]) {
-  var value = [problem.replace('problem-', ''),];
+  var pbName = problem.replace('problem-', '');
+  pbName = ('000000' + pbName);
+  pbName = pbName.substr(pbName.length - 3);
+  var value = [pbName,];
   for (var solver in benchmark["schittkowski"][problem]) {
   value.push(parseFloat(
   benchmark["schittkowski"][problem][solver] ?
@@ -168,7 +173,7 @@ sitemap:
 
 
   var options = {
-  title: 'Schittkowski Test Suite',
+  title: 'Hock-Schittkowski Collection Test Suite',
   hAxis: {title: 'Time (seconds)'},
   vAxis: {title: 'Problem Id'}
   };
