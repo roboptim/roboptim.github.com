@@ -15,6 +15,33 @@ sitemap:
   efficiency of the different available approaches.
 </p>
 
+
+<div class="bs-callout bs-callout-info">
+  <h4>Methodology</h4>
+  <ol>
+    <li>Run the RobOptim test suite for each solver, the Schittkowski
+    problems are included, see
+    the <a href="https://github.com/roboptim/roboptim-shared-tests">roboptim-shared-tests</a>
+    repository to see the actual implementation.</li>
+    <li>Convert the RobOptim log files, i.e. <code>journal.log</code>, to a
+    YAML file
+    using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a></li>
+    <li>Tests for which solvers are failing are finally removed from
+    the dataset (manually for now).</li>
+  </ol>
+
+  <p>The log file timing information are generated
+    using <a href="http://www.boost.org/doc/libs/1_55_0/doc/html/date_time/posix_time.html">Boost.DateTime</a>.
+  </p>
+
+  <p>The tests provided here are too small to test sparse solvers in
+    a robust way. Values for these solvers should be handled with
+    great care!</p>
+</div>
+
+<!--Div that will hold the pie chart-->
+<div id="benchmark_schittkowski" style="width: 100%; height: 300em"></div>
+
 <!--Load the AJAX API-->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
@@ -126,7 +153,7 @@ sitemap:
   }
 
   for (var problem in benchmark["schittkowski"]) {
-  var value = [problem,];
+  var value = [problem.replace('problem-', ''),];
   for (var solver in benchmark["schittkowski"][problem]) {
   value.push(parseFloat(
   benchmark["schittkowski"][problem][solver] ?
@@ -142,16 +169,11 @@ sitemap:
 
   var options = {
   title: 'Schittkowski Test Suite',
-  hAxis: {title: 'Time (seconds)',  titleTextStyle: {color: 'red'}},
-  vAxis: {title: 'Problems',  titleTextStyle: {color: 'red'}}
+  hAxis: {title: 'Time (seconds)'},
+  vAxis: {title: 'Problem Id'}
   };
 
-  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.BarChart(document.getElementById('benchmark_schittkowski'));
   chart.draw(data, options);
   }
 </script>
-
-<!--Div that will hold the pie chart-->
-<div id="chart_div" style="width: 100%; height: 300em"></div>
-
-<div style="height: 10em"></div>
