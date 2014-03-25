@@ -40,8 +40,30 @@
   - family: Nakaoka
     given: Shin'Ichiro
   year: 2013
+  type: book
   container-title: "44th International Symposium on Robotics (ISR)"
   URL: http://hal.archives-ouvertes.fr/hal-00908568
+- id: elkhoury:thesis:2013
+  title: "Planning Optimal Motions for Anthropomorphic Systems"
+  author:
+  - family: El Khoury
+    given: Antonio
+  year: 2013
+  type: thesis
+  URL: http://hal.archives-ouvertes.fr/tel-00833019
+- id: elkhoury:icra:2013
+  title: "Optimal motion planning for humanoid robots"
+  author:
+  - family: El Khoury
+    given: Antonio
+  - family: Lamiraux
+    given: Florent
+  - family: Taïx
+    given: Michel
+  year: 2013
+  container-title: "IEEE International Conference on Robotics and Automation (ICRA)"
+  type: book
+  URL: http://hal.archives-ouvertes.fr/index.php?halsid=a9kr3586qr6mi2nj3tkk365s90&view_this_doc=hal-00715419&version=3
 - id: bouyarmane:humanoids:2012
   title: "Exploring Humanoid Robot Locomotion Capabilities in Virtual Disaster Response Scenarios"
   author:
