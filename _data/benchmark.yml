@@ -1,72 +1,1367 @@
-
-- {solver: "cfsqp", testsuite: "n/a", problem: "distance-to-sphere", time: "00.005732"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-33", time: "00.008222"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-14", time: "00.013357"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-29", time: "00.012670"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-12", time: "00.009511"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-61", time: "00.004914"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-52", time: "00.004861"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-51", time: "00.004293"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-42", time: "00.010236"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-71", time: "00.010385"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-49", time: "00.004604"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-44", time: "00.024266"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-32", time: "00.013129"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-48", time: "00.005219"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-54", time: "00.006388"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-11", time: "00.010682"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-24", time: "00.012276"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-18", time: "00.018808"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-26", time: "00.031456"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-15", time: "00.015371"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-27", time: "00.045385"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-22", time: "00.006664"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-72", time: "00.002655"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-40", time: "00.005517"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-8", time: "00.050951"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-34", time: "00.016616"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-63", time: "00.004955"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-71b", time: "00.008043"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-56", time: "00.004085"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-47", time: "00.022908"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-20", time: "00.011421"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-21", time: "00.005399"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-19", time: "00.021213"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-30", time: "00.018894"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-36", time: "00.016782"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-13", time: "00.036109"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-50", time: "00.005178"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-79", time: "00.021005"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-54b", time: "00.004768"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-6", time: "00.009990"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-35", time: "00.009770"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-23", time: "00.025037"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-7", time: "00.009362"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-80", time: "00.003740"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-25", time: "00.003223"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-3", time: "00.003683"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-17", time: "00.022250"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-28", time: "00.008440"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-2", time: "00.003645"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-78", time: "00.008994"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-10", time: "00.009468"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-65", time: "00.005819"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-4", time: "00.002223"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-9", time: "00.009977"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-53", time: "00.030851"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-66", time: "00.017327"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-41", time: "00.010433"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-31", time: "00.014262"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-76", time: "00.003982"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-37", time: "00.006068"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-55", time: "00.004837"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-5", time: "00.004239"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-81", time: "00.022597"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-16", time: "00.010134"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-45", time: "00.005382"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-1", time: "00.005993"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-64", time: "00.346415"}
-- {solver: "cfsqp", testsuite: "schittkowski", problem: "problem-60", time: "00.011258"}
+- problem: distance-to-sphere
+  solver: nlopt
+  testsuite: n/a
+  time: 0.001926
+- problem: problem-48
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.00551
+- problem: problem-52
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.010381999999999999
+- problem: problem-71b
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0049689999999999995
+- problem: problem-81
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.016038999999999998
+- problem: problem-80
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.016111999999999998
+- problem: problem-79
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.014369
+- problem: problem-78
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.014423
+- problem: problem-76
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003891
+- problem: problem-72
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.008976
+- problem: problem-71
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0073739999999999995
+- problem: problem-66
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.017901999999999998
+- problem: problem-65
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.01347
+- problem: problem-64
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004539
+- problem: problem-63
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.012513
+- problem: problem-61
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.013356999999999999
+- problem: problem-60
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003248
+- problem: problem-56
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.024439
+- problem: problem-55
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.019036
+- problem: problem-53
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.006199
+- problem: problem-51
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.013993
+- problem: problem-50
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003511
+- problem: problem-49
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.014922999999999999
+- problem: problem-47
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.015311
+- problem: problem-45
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0018009999999999999
+- problem: problem-44
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.040323
+- problem: problem-43
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.025748999999999998
+- problem: problem-42
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0031049999999999997
+- problem: problem-41
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004299
+- problem: problem-40
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004744
+- problem: problem-39
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.021498
+- problem: problem-38
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.007272
+- problem: problem-37
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003084
+- problem: problem-36
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0024709999999999997
+- problem: problem-35
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0033629999999999997
+- problem: problem-34
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.017672999999999998
+- problem: problem-33
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003604
+- problem: problem-32
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.00703
+- problem: problem-31
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.003607
+- problem: problem-30
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.002156
+- problem: problem-29
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.009623999999999999
+- problem: problem-28
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0030199999999999997
+- problem: problem-27
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.008794999999999999
+- problem: problem-26
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.015747999999999998
+- problem: problem-25
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.009439
+- problem: problem-24
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.006319
+- problem: problem-23
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.010001
+- problem: problem-22
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.005213
+- problem: problem-21
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.002211
+- problem: problem-20
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.00432
+- problem: problem-19
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.022246
+- problem: problem-18
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004563
+- problem: problem-17
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0053289999999999995
+- problem: problem-16
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004848
+- problem: problem-15
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.007982
+- problem: problem-14
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004758
+- problem: problem-13
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.01244
+- problem: problem-12
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.012267
+- problem: problem-11
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0037819999999999998
+- problem: problem-10
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0045709999999999995
+- problem: problem-9
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.016323
+- problem: problem-8
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.021349999999999997
+- problem: problem-7
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.004222
+- problem: problem-6
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.015843
+- problem: problem-5
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.002477
+- problem: problem-4
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.0026479999999999997
+- problem: problem-3
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.002574
+- problem: problem-2
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.002967
+- problem: problem-1
+  solver: nlopt
+  testsuite: schittkowski
+  time: 0.010135
+- problem: distance-to-sphere
+  solver: cfsqp
+  testsuite: n/a
+  time: 0.002571
+- problem: problem-71b
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002986
+- problem: problem-81
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.006170999999999999
+- problem: problem-80
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002215
+- problem: problem-79
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.005973
+- problem: problem-78
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003757
+- problem: problem-76
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002301
+- problem: problem-72
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.001986
+- problem: problem-71
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0036049999999999997
+- problem: problem-66
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.005183
+- problem: problem-65
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002878
+- problem: problem-64
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.072772
+- problem: problem-63
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002222
+- problem: problem-61
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002229
+- problem: problem-60
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003176
+- problem: problem-56
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0021839999999999997
+- problem: problem-55
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002123
+- problem: problem-53
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0064919999999999995
+- problem: problem-52
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002314
+- problem: problem-51
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002061
+- problem: problem-50
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002201
+- problem: problem-49
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002141
+- problem: problem-48
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002141
+- problem: problem-47
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.005111
+- problem: problem-45
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002469
+- problem: problem-44
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.004778999999999999
+- problem: problem-34
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.00435
+- problem: problem-42
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0029879999999999998
+- problem: problem-41
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0030859999999999998
+- problem: problem-40
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0022329999999999997
+- problem: problem-37
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002484
+- problem: problem-36
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.006575999999999999
+- problem: problem-35
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003008
+- problem: problem-33
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0027719999999999997
+- problem: problem-32
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0035989999999999998
+- problem: problem-31
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003809
+- problem: problem-30
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0043219999999999995
+- problem: problem-29
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003421
+- problem: problem-28
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002947
+- problem: problem-27
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.009011
+- problem: problem-26
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.008175
+- problem: problem-25
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0023439999999999997
+- problem: problem-24
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0038699999999999997
+- problem: problem-23
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.00518
+- problem: problem-22
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002547
+- problem: problem-21
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003055
+- problem: problem-20
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003789
+- problem: problem-19
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.006137999999999999
+- problem: problem-18
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.005519
+- problem: problem-17
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.006072
+- problem: problem-16
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0037129999999999997
+- problem: problem-15
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.00447
+- problem: problem-14
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.004412
+- problem: problem-13
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.009958999999999999
+- problem: problem-12
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003874
+- problem: problem-11
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003888
+- problem: problem-10
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.00492
+- problem: problem-9
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.00449
+- problem: problem-8
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.015519999999999999
+- problem: problem-7
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0060609999999999995
+- problem: problem-6
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0062889999999999995
+- problem: problem-5
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003111
+- problem: problem-4
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.002692
+- problem: problem-3
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.003271
+- problem: problem-2
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.0032849999999999997
+- problem: problem-1
+  solver: cfsqp
+  testsuite: schittkowski
+  time: 0.004411
+- problem: distance-to-sphere
+  solver: pagmo
+  testsuite: n/a
+  time: 0.019676
+- problem: problem-63
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.435735
+- problem: problem-55
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.35029
+- problem: problem-71b
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.40574099999999996
+- problem: problem-81
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.58665
+- problem: problem-80
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.8565119999999999
+- problem: problem-79
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.757362
+- problem: problem-78
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.17360899999999999
+- problem: problem-76
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.141928
+- problem: problem-72
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.168952
+- problem: problem-71
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.9813879999999999
+- problem: problem-66
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.12457199999999999
+- problem: problem-65
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.057213
+- problem: problem-64
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.107653
+- problem: problem-61
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.083882
+- problem: problem-60
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.775345
+- problem: problem-56
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.422095
+- problem: problem-53
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.173028
+- problem: problem-52
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.227153
+- problem: problem-51
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.171104
+- problem: problem-50
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.411375
+- problem: problem-49
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.324789
+- problem: problem-48
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.247302
+- problem: problem-47
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.184073
+- problem: problem-45
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.12919
+- problem: problem-44
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.329198
+- problem: problem-43
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.191155
+- problem: problem-41
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.16335
+- problem: problem-40
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.361575
+- problem: problem-39
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.028643
+- problem: problem-38
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.110051
+- problem: problem-37
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.13798
+- problem: problem-36
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.22067599999999998
+- problem: problem-35
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.20221599999999998
+- problem: problem-34
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.16247499999999998
+- problem: problem-33
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.102419
+- problem: problem-32
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.148529
+- problem: problem-31
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.853691
+- problem: problem-30
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.075441
+- problem: problem-29
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.183914
+- problem: problem-28
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.070695
+- problem: problem-27
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.6056659999999999
+- problem: problem-26
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.594729
+- problem: problem-25
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.586865
+- problem: problem-24
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.100091
+- problem: problem-23
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.128269
+- problem: problem-22
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.094884
+- problem: problem-21
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.048929999999999994
+- problem: problem-20
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.080757
+- problem: problem-19
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.11828899999999999
+- problem: problem-18
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.07181699999999999
+- problem: problem-17
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.11169799999999999
+- problem: problem-16
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.076587
+- problem: problem-15
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.139375
+- problem: problem-14
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.159414
+- problem: problem-13
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.173351
+- problem: problem-12
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.09711299999999999
+- problem: problem-11
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.054081
+- problem: problem-10
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.572369
+- problem: problem-9
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.762799
+- problem: problem-8
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.13153399999999998
+- problem: problem-7
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.44248299999999996
+- problem: problem-6
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.098468
+- problem: problem-5
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.018941
+- problem: problem-4
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.05517
+- problem: problem-3
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.034558
+- problem: problem-2
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.341847
+- problem: problem-1
+  solver: pagmo
+  testsuite: schittkowski
+  time: 0.417799
+- problem: distance-to-sphere
+  solver: ipopt-sparse
+  testsuite: n/a
+  time: 0.01044
+- problem: problem-71b
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.008994
+- problem: problem-81
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007660999999999999
+- problem: problem-80
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.00692
+- problem: problem-79
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009375999999999999
+- problem: problem-78
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007231
+- problem: problem-76
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.010542
+- problem: problem-72
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.014018
+- problem: problem-71
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.008615
+- problem: problem-66
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.010445999999999999
+- problem: problem-65
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011777
+- problem: problem-64
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.013019
+- problem: problem-63
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006978
+- problem: problem-61
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007058999999999999
+- problem: problem-60
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011460999999999999
+- problem: problem-56
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.38564
+- problem: problem-55
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.0049629999999999995
+- problem: problem-53
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.008804
+- problem: problem-52
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007052999999999999
+- problem: problem-51
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006633999999999999
+- problem: problem-50
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007548
+- problem: problem-49
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.024664
+- problem: problem-48
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007038999999999999
+- problem: problem-47
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.025563
+- problem: problem-45
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.014648999999999999
+- problem: problem-44
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.015089
+- problem: problem-43
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.012537
+- problem: problem-42
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006954999999999999
+- problem: problem-41
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.012034
+- problem: problem-40
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006963
+- problem: problem-39
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011131
+- problem: problem-38
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.040813999999999996
+- problem: problem-37
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.00769
+- problem: problem-36
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009097
+- problem: problem-35
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.010581
+- problem: problem-34
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.00913
+- problem: problem-33
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009988
+- problem: problem-32
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.015274999999999999
+- problem: problem-31
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009339
+- problem: problem-30
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009047999999999999
+- problem: problem-29
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.01393
+- problem: problem-28
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007571
+- problem: problem-27
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.015933
+- problem: problem-26
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.015687
+- problem: problem-25
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.043512999999999996
+- problem: problem-24
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.013389999999999999
+- problem: problem-23
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.010875
+- problem: problem-22
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007195
+- problem: problem-21
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.008565999999999999
+- problem: problem-20
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.00832
+- problem: problem-19
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011177999999999999
+- problem: problem-18
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011566
+- problem: problem-17
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.02601
+- problem: problem-16
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.012001999999999999
+- problem: problem-15
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.010192999999999999
+- problem: problem-14
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006869
+- problem: problem-13
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.018379
+- problem: problem-12
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009238
+- problem: problem-11
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007559
+- problem: problem-10
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.009556
+- problem: problem-9
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007311
+- problem: problem-8
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.051622999999999995
+- problem: problem-7
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.0073349999999999995
+- problem: problem-6
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.007618
+- problem: problem-5
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.006945
+- problem: problem-4
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.005861
+- problem: problem-3
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.004952
+- problem: problem-2
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.011243999999999999
+- problem: problem-1
+  solver: ipopt-sparse
+  testsuite: schittkowski
+  time: 0.017013999999999998
+- problem: distance-to-sphere
+  solver: ipopt
+  testsuite: n/a
+  time: 0.010742999999999999
+- problem: problem-71b
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008565
+- problem: problem-81
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.00778
+- problem: problem-80
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007806
+- problem: problem-79
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008839
+- problem: problem-78
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007176999999999999
+- problem: problem-76
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011101
+- problem: problem-72
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.013092999999999999
+- problem: problem-71
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008477
+- problem: problem-66
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011176
+- problem: problem-65
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011552999999999999
+- problem: problem-64
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.012915999999999999
+- problem: problem-63
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007163999999999999
+- problem: problem-61
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007248999999999999
+- problem: problem-60
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011545
+- problem: problem-56
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.198677
+- problem: problem-55
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.006666999999999999
+- problem: problem-53
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008133
+- problem: problem-52
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.0068059999999999996
+- problem: problem-51
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.0067659999999999994
+- problem: problem-50
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007049
+- problem: problem-49
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.026071
+- problem: problem-48
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.006992
+- problem: problem-47
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.027607999999999997
+- problem: problem-45
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.014501
+- problem: problem-44
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.022015
+- problem: problem-43
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.012577
+- problem: problem-42
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.0071779999999999995
+- problem: problem-41
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011859999999999999
+- problem: problem-40
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.006345
+- problem: problem-39
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011045
+- problem: problem-38
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.04118
+- problem: problem-37
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.0077009999999999995
+- problem: problem-36
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.009346
+- problem: problem-35
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.010225999999999999
+- problem: problem-34
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008744
+- problem: problem-33
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.010858
+- problem: problem-32
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.01512
+- problem: problem-31
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.009056999999999999
+- problem: problem-30
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.009453999999999999
+- problem: problem-29
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.013731
+- problem: problem-28
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007698
+- problem: problem-27
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.01566
+- problem: problem-26
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.015843
+- problem: problem-25
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.043894999999999997
+- problem: problem-24
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.012662
+- problem: problem-23
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.010067
+- problem: problem-22
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007571
+- problem: problem-21
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008990999999999999
+- problem: problem-20
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008081999999999999
+- problem: problem-19
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.01095
+- problem: problem-18
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.011092999999999999
+- problem: problem-17
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.025969
+- problem: problem-16
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.017067
+- problem: problem-15
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.010352
+- problem: problem-14
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.006588
+- problem: problem-13
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.018191
+- problem: problem-12
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.009890999999999999
+- problem: problem-11
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007837
+- problem: problem-10
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.010138
+- problem: problem-9
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.007274999999999999
+- problem: problem-8
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.053561
+- problem: problem-7
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008478
+- problem: problem-6
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008957
+- problem: problem-5
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.01011
+- problem: problem-4
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.008787999999999999
+- problem: problem-3
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.0059759999999999995
+- problem: problem-2
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.01384
+- problem: problem-1
+  solver: ipopt
+  testsuite: schittkowski
+  time: 0.03564
 - {solver: "nag-nlp-sparse", testsuite: "n/a", problem: "distance-to-sphere", time: "00.011966"}
 - {solver: "nag-nlp-sparse", testsuite: "schittkowski", problem: "problem-33", time: "00.021365"}
 - {solver: "nag-nlp-sparse", testsuite: "schittkowski", problem: "problem-14", time: "00.017131"}
@@ -133,138 +1428,6 @@
 - {solver: "nag-nlp-sparse", testsuite: "schittkowski", problem: "problem-1", time: "00.024732"}
 - {solver: "nag-nlp-sparse", testsuite: "schittkowski", problem: "problem-64", time: "00.026720"}
 - {solver: "nag-nlp-sparse", testsuite: "schittkowski", problem: "problem-60", time: "00.018849"}
-- {solver: "ipopt", testsuite: "n/a", problem: "distance-to-sphere", time: "00.032794"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-33", time: "00.027704"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-14", time: "00.019477"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-29", time: "00.026956"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-12", time: "00.027652"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-61", time: "00.016567"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-52", time: "00.019395"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-51", time: "00.016862"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-42", time: "00.027987"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-71", time: "00.022825"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-49", time: "00.069250"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-44", time: "00.052520"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-32", time: "00.045330"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-48", time: "00.015599"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-11", time: "00.019632"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-24", time: "00.054250"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-18", time: "00.025896"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-26", time: "00.037171"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-15", time: "00.030315"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-27", time: "00.035685"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-22", time: "00.022385"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-72", time: "00.035504"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-40", time: "00.018437"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-8", time: "00.163120"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-34", time: "00.046853"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-63", time: "00.016406"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-71b", time: "00.030119"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-56", time: "00.281243"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-47", time: "00.066015"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-20", time: "00.023581"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-21", time: "00.027974"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-19", time: "00.030705"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-30", time: "00.014127"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-36", time: "00.031252"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-13", time: "00.056283"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-50", time: "00.015509"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-79", time: "00.021937"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-6", time: "00.018893"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-35", time: "00.033172"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-23", time: "00.045507"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-7", time: "00.018226"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-80", time: "00.015411"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-25", time: "00.098583"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-3", time: "00.008022"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-17", time: "00.082438"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-28", time: "00.013198"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-2", time: "00.020081"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-78", time: "00.018563"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-10", time: "00.019842"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-65", time: "00.024932"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-4", time: "00.010595"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-9", time: "00.013186"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-53", time: "00.039005"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-66", time: "00.030917"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-41", time: "00.057845"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-31", time: "00.024222"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-76", time: "00.021921"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-37", time: "00.023363"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-55", time: "00.026737"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-5", time: "00.016993"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-81", time: "00.023387"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-16", time: "00.037104"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-45", time: "00.031236"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-1", time: "00.033338"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-64", time: "00.028075"}
-- {solver: "ipopt", testsuite: "schittkowski", problem: "problem-60", time: "00.019922"}
-- {solver: "ipopt-sparse", testsuite: "n/a", problem: "distance-to-sphere", time: "00.028706"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-33", time: "00.039216"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-14", time: "00.018007"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-29", time: "00.044678"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-12", time: "00.033990"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-61", time: "00.016418"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-52", time: "00.019147"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-51", time: "00.015917"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-42", time: "00.015265"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-71", time: "00.026047"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-49", time: "00.078061"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-44", time: "00.055593"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-32", time: "00.074095"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-48", time: "00.017949"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-11", time: "00.026515"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-24", time: "00.069277"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-18", time: "00.028444"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-26", time: "00.043877"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-15", time: "00.033151"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-27", time: "00.064558"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-22", time: "00.024258"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-72", time: "00.037637"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-40", time: "00.015819"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-8", time: "00.195163"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-34", time: "00.035814"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-63", time: "00.015733"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-71b", time: "00.025062"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-56", time: "00.148961"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-47", time: "00.087232"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-20", time: "00.031380"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-21", time: "00.025162"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-19", time: "00.038901"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-30", time: "00.023337"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-36", time: "00.027755"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-13", time: "00.068645"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-50", time: "00.014208"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-79", time: "00.030844"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-6", time: "00.026485"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-35", time: "00.024950"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-23", time: "00.081003"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-7", time: "00.028088"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-80", time: "00.021926"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-25", time: "00.101519"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-3", time: "00.012514"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-17", time: "00.087999"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-28", time: "00.028626"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-2", time: "00.028346"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-78", time: "00.018100"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-10", time: "00.025808"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-65", time: "00.054488"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-4", time: "00.016315"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-9", time: "00.014415"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-53", time: "00.016391"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-66", time: "00.037721"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-41", time: "00.031066"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-31", time: "00.024763"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-76", time: "00.022773"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-37", time: "00.025027"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-55", time: "00.013669"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-5", time: "00.020893"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-81", time: "00.022889"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-16", time: "00.052276"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-45", time: "00.030909"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-1", time: "00.054407"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-64", time: "00.051808"}
-- {solver: "ipopt-sparse", testsuite: "schittkowski", problem: "problem-60", time: "00.021429"}
 - {solver: "nag-nlp", testsuite: "n/a", problem: "distance-to-sphere", time: "00.011158"}
 - {solver: "nag-nlp", testsuite: "schittkowski", problem: "problem-33", time: "00.016695"}
 - {solver: "nag-nlp", testsuite: "schittkowski", problem: "problem-14", time: "00.014441"}

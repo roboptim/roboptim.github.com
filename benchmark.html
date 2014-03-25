@@ -28,8 +28,8 @@ sitemap:
     </li>
 
     <li>Convert the RobOptim log files, i.e. <code>journal.log</code>, to a
-      YAML file
-      using <a href="https://gist.github.com/thomas-moulard/9757879">bench.sh</a>.</li>
+      YAML file using
+      <a href="https://github.com/roboptim/roboptim-analysis/blob/master/src/roboptim/analysis/log_to_yaml.py">log_to_yaml.py</a>.</li>
     <li>Tests for which solvers are failing are finally removed from
       the dataset (manually for now).</li>
   </ol>
@@ -44,6 +44,7 @@ sitemap:
 
   <p><a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">The
   document defining all the problems is available here.</a></p>
+
 </div>
 
 <div id="benchmark_schittkowski" style="width: 100%; height: 300em"></div>
@@ -57,6 +58,7 @@ sitemap:
   if (!benchmark["{{test.testsuite}}"]["{{test.problem}}"]) {benchmark["{{test.testsuite}}"]["{{test.problem}}"] = {};}
   benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
   {% endfor %}
+
 
   benchmark["schittkowski"]["problem-15"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-16"]["cfsqp"] = null;
@@ -72,7 +74,6 @@ sitemap:
   benchmark["schittkowski"]["problem-51"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-52"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-53"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-54"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-55"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-56"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-61"]["cfsqp"] = null;
@@ -84,7 +85,6 @@ sitemap:
   benchmark["schittkowski"]["problem-79"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-80"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-81"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-54b"]["cfsqp"] = null;
 
   benchmark["schittkowski"]["problem-13"]["ipopt"] = null;
   benchmark["schittkowski"]["problem-16"]["ipopt"] = null;
@@ -103,6 +103,7 @@ sitemap:
   benchmark["schittkowski"]["problem-44"]["ipopt-sparse"] = null;
   benchmark["schittkowski"]["problem-55"]["ipopt-sparse"] = null;
   benchmark["schittkowski"]["problem-56"]["ipopt-sparse"] = null;
+
 
   benchmark["schittkowski"]["problem-2"]["nag-nlp"] = null;
   benchmark["schittkowski"]["problem-8"]["nag-nlp"] = null;
@@ -136,12 +137,28 @@ sitemap:
   benchmark["schittkowski"]["problem-56"]["nag-nlp-sparse"] = null;
   benchmark["schittkowski"]["problem-72"]["nag-nlp-sparse"] = null;
 
+  var nlopt_fail = ["2", "8", "9", "12", "16", "19", "20", "25", "26", "28",
+                    "33", "34", "36", "43", "44", "47", "49", "51", "55",
+                    "56", "65", "81"]
+  for (var i = 0, tot = nlopt_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nlopt_fail[i])]["nlopt"] = null;
+  }
+
+  var pagmo_fail = ["6", "7", "10", "13", "15", "24", "26", "27", "31", "39",
+                    "40", "47", "55", "56", "60", "61", "63", "71", "78", "79",
+                    "80", "81", "71b"]
+  for (var i = 0, tot = pagmo_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(pagmo_fail[i])]["pagmo"] = null;
+  }
+
   var solverPrettyNames = {
   "cfsqp": "CFSQP",
   "ipopt": "IPOPT",
   "ipopt-sparse": "IPOPT (sparse)",
   "nag-nlp": "NAG",
   "nag-nlp-sparse": "NAG (sparse)",
+  "nlopt": "NLopt (alpha)",
+  "pagmo": "PaGMO (alpha)"
   };
 
   google.load("visualization", "1", {packages:["corechart"]});
@@ -169,7 +186,8 @@ sitemap:
   benchmark["schittkowski"][problem][solver] :
   null));
   }
-  value.length = 6;
+  // TODO: Compute this value automatically
+  value.length = 8;
   data.addRow(value);
   }
 
