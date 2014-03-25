@@ -25,6 +25,14 @@ sitemap:
   benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
   {% endfor %}
 
+  var solverPrettyNames = {
+  "cfsqp": "CFQSP",
+  "ipopt": "IPOPT",
+  "ipopt-sparse": "IPOPT (sparse)",
+  "nag-nlp": "NAG",
+  "nag-nlp-sparse": "NAG (sparse)",
+  };
+
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
@@ -33,7 +41,8 @@ sitemap:
   data.addColumn('string', 'Solver');
   for (var problem in benchmark["schittkowski"]) {
   for (var solver in benchmark["schittkowski"][problem]) {
-  data.addColumn('number', solver);
+  data.addColumn('number',
+  solverPrettyNames[solver] ? solverPrettyNames[solver] : solver);
   }
   break;
   }
@@ -41,7 +50,10 @@ sitemap:
   for (var problem in benchmark["schittkowski"]) {
   var value = [problem,];
   for (var solver in benchmark["schittkowski"][problem]) {
-  value.push(parseFloat(benchmark["schittkowski"][problem][solver]));
+  value.push(parseFloat(
+  benchmark["schittkowski"][problem][solver] ?
+  benchmark["schittkowski"][problem][solver] :
+  null));
   }
   value.length = 6;
   data.addRow(value);
