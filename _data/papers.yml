@@ -30,3 +30,49 @@
   container-title: Cybernetics and Intelligent Systems Robotics, Automation and Mechatronics (CISRAM'2013)
   type: book
   URL: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00863931
+- id: moulard:isr:2013
+  title: "Optimization-based Motion Retargeting Integrating Spatial and Dynamic Constraints"
+  author:
+  - family: Moulard
+    given: Thomas
+  - family: Yoshida
+    given: Eiichi
+  - family: Nakaoka
+    given: Shin'Ichiro
+  year: 2013
+  container-title: "44th International Symposium on Robotics (ISR)"
+  URL: http://hal.archives-ouvertes.fr/hal-00908568
+- id: bouyarmane:humanoids:2012
+  title: "Exploring Humanoid Robot Locomotion Capabilities in Virtual Disaster Response Scenarios"
+  author:
+  - family: Bouyarmane
+    given: Karim
+  - family: Vaillant
+    given: Joris
+  - family: Keith
+    given: François
+  - family: Kheddar
+    given: Abderrahmane
+  year: 2012
+  container-title: "Humanoids'12: 12th International Conference on Humanoid Robots"
+  type: book
+  URL: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00765817
+- id: bouyarmane:thesis:2011
+  title: "On Autonomous Humanoid Robots: Contact Planning for Locomotion and Manipulation"
+  author:
+  - family: Bouyarmane
+    given: Karim
+  year: 2011
+  type: thesis
+  URL: http://tel.archives-ouvertes.fr/tel-00806453
+- id: moulard:2010
+  title: "Collision-free walk planning for humanoid robots using numerical optimization"
+  author:
+  - family: Moulard
+    given: Thomas
+  - family: Lamiraux
+    given: Florent
+  - family: Wieber
+    given: Pierre-Brice
+  year: 2010
+  URL: http://hal.archives-ouvertes.fr/hal-00486997
