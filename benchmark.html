@@ -1,0 +1,64 @@
+---
+layout: default
+title: Benchmarks
+sitemap:
+  lastmod: 2014-03-11
+  priority: 0.9
+  changefreq: monthly
+---
+
+<h1 id="benchmark" class="page-header">{{ page.title }}</h1>
+
+<p class="lead">
+  This page summarizes how much time is required to solve different
+  optimization problems. Various solvers are used to compare the
+  efficiency of the different available approaches.
+</p>
+
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  var benchmark = {};
+  {% for test in site.data.benchmark %}
+  if (!benchmark["{{test.testsuite}}"]) {benchmark["{{test.testsuite}}"] = {};}
+  if (!benchmark["{{test.testsuite}}"]["{{test.problem}}"]) {benchmark["{{test.testsuite}}"]["{{test.problem}}"] = {};}
+  benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
+  {% endfor %}
+
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+  var data = new google.visualization.DataTable();
+
+  data.addColumn('string', 'Solver');
+  for (var problem in benchmark["schittkowski"]) {
+  for (var solver in benchmark["schittkowski"][problem]) {
+  data.addColumn('number', solver);
+  }
+  break;
+  }
+
+  for (var problem in benchmark["schittkowski"]) {
+  var value = [problem,];
+  for (var solver in benchmark["schittkowski"][problem]) {
+  value.push(parseFloat(benchmark["schittkowski"][problem][solver]));
+  }
+  value.length = 6;
+  data.addRow(value);
+  }
+
+
+  var options = {
+  title: 'Schittkowski Test Suite',
+  vAxis: {title: 'Problems',  titleTextStyle: {color: 'red'}}
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+  }
+</script>
+
+<!--Div that will hold the pie chart-->
+<div id="chart_div" style="height: 300em"></div>
+
+<div style="height: 10em"></div>
