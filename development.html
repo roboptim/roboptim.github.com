@@ -96,9 +96,10 @@ disqus: true
       OAuth.popup('github', function(err, result) {
         if (result) {
           window.localStorage.setItem('access_token', result.access_token);
+          console.log(result.access_token);
+        } else {
+          console.log(err);
         };
-        console.log(result);
-        console.log(err);
       });
     });
 
