@@ -9,6 +9,13 @@ disqus: true
 <h1 id="development" class="page-header">{{ page.title }}</h1>
 
 <h2>Dashboard</h2>
+
+<div>
+  <button type="button" class="btn btn-primary" id="github_login">
+    <span class="glyphicon glyphicon-new-window"></span> Login with GitHub
+  </button>
+</div>
+
 <div class="table-responsive">
   <table class="table table-condensed" id="status">
     <thead>
@@ -84,6 +91,16 @@ disqus: true
 
 
   <script type="text/javascript">
+    OAuth.initialize('HBq1xdZOdQhyXMINd3dBBGDZfds');
+    $("#github_login").click(function(){
+      OAuth.popup('github', function(err, result) {
+        if (result) {
+          window.local_storage.setItem('access_token', result.access_token);
+        };
+      });
+    });
+
+    var access_token = window.localStorage.getItem('access_token');
     var stateToStyle = {
     "passed": "",
     "errored": "active",
@@ -112,12 +129,12 @@ disqus: true
           $("#" + project).removeClass().addClass(stateToStyle[value.state]);
         });
       });
-      url = "https://api.github.com/repos/roboptim/" + project + "/issues";
+      url = "https://api.github.com/repos/roboptim/" + project + "/issues?access_token=" + access_token;
       $.get(url, function (data) {
           content = "<a href ='https://www.github.com/roboptim/" + project + "/issues'>" + data.length + "</a>";
           $("#" + project + "-issues").html(content);
       });
-      url = "https://api.github.com/repos/roboptim/" + project + "/pulls";
+      url = "https://api.github.com/repos/roboptim/" + project + "/pulls?access_token=" + access_token;
       $.get(url, function (data) {
           content = "<a href ='https://www.github.com/roboptim/" + project + "/pulls'>" + data.length + "</a>";
           $("#" + project + "-pr").html(content);
