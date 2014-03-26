@@ -95,7 +95,7 @@ disqus: true
     $("#github_login").click(function(){
       OAuth.popup('github', function(err, result) {
         if (result) {
-          window.local_storage.setItem('access_token', result.access_token);
+          window.localStorage.setItem('access_token', result.access_token);
         };
         console.log(result);
         console.log(err);
