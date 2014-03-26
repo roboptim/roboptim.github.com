@@ -97,6 +97,8 @@ disqus: true
         if (result) {
           window.local_storage.setItem('access_token', result.access_token);
         };
+        console.log(result);
+        console.log(err);
       });
     });
 
