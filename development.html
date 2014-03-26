@@ -10,12 +10,6 @@ disqus: true
 
 <h2>Dashboard</h2>
 
-<div>
-  <button type="button" class="btn btn-primary" id="github_login">
-    <span class="glyphicon glyphicon-new-window"></span> Login with GitHub
-  </button>
-</div>
-
 <div class="table-responsive">
   <table class="table table-condensed" id="status">
     <thead>
@@ -46,6 +40,20 @@ disqus: true
       {% endfor %}
     </tbody>
   </table>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Access to all developer information...</h4>
+
+    <p>
+      Due to GitHub API quota, if you access this page frequently, you
+      will need to login to see the number of issues and pull request.
+    </p>
+
+    <button type="button" class="btn btn-primary" id="github_login">
+      <span class="glyphicon glyphicon-new-window"></span> Login with GitHub
+    </button>
+  </div>
+
 
   <div style="padding:5em">&nbsp;</div>
   <h2>Thank You!</h2>
