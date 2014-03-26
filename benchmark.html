@@ -47,6 +47,7 @@ sitemap:
 
 </div>
 
+<div id="benchmark_schittkowski_dl"></div>
 <div id="benchmark_schittkowski" style="width: 100%; height: 300em"></div>
 
 <!--Load the AJAX API-->
@@ -58,7 +59,6 @@ sitemap:
   if (!benchmark["{{test.testsuite}}"]["{{test.problem}}"]) {benchmark["{{test.testsuite}}"]["{{test.problem}}"] = {};}
   benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
   {% endfor %}
-
 
   benchmark["schittkowski"]["problem-15"]["cfsqp"] = null;
   benchmark["schittkowski"]["problem-16"]["cfsqp"] = null;
@@ -212,6 +212,14 @@ sitemap:
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('benchmark_schittkowski'));
+    google.visualization.events.addListener(chart, 'ready', function () {
+      $("#benchmark_schittkowski_dl").html(
+      '<button type="button" class="btn btn-primary" id="benchmark_schittkowski_dl_btn"><span class="glyphicon glyphicon-download"></span> Download graph</button>');
+      $("#benchmark_schittkowski_dl_btn").click(function(){
+        window.location.href=chart.getImageURI();
+      });
+    });
+
     chart.draw(data, options);
 
     // Add listener to select/unselect solvers
