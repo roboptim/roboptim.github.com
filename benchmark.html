@@ -44,7 +44,8 @@ sitemap:
     great care!</p>
 
   <p><a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">The
-  document defining all the problems is available here.</a></p>
+      document defining all the problems is available here.</a>
+  </p>
 
 </div>
 
@@ -56,87 +57,39 @@ sitemap:
 <script type="text/javascript">
   var benchmark = {};
   {% for test in site.data.benchmark %}
-  if (!benchmark["{{test.testsuite}}"]) {benchmark["{{test.testsuite}}"] = {};}
-  if (!benchmark["{{test.testsuite}}"]["{{test.problem}}"]) {benchmark["{{test.testsuite}}"]["{{test.problem}}"] = {};}
-  benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
+      if (!benchmark["{{test.testsuite}}"]) {benchmark["{{test.testsuite}}"] = {};}
+      if (!benchmark["{{test.testsuite}}"]["{{test.problem}}"]) {benchmark["{{test.testsuite}}"]["{{test.problem}}"] = {};}
+      benchmark["{{test.testsuite}}"]["{{test.problem}}"]["{{test.solver}}"] = "{{test.time}}";
   {% endfor %}
 
-  benchmark["schittkowski"]["problem-15"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-16"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-20"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-25"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-28"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-33"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-40"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-47"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-48"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-49"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-50"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-51"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-52"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-53"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-55"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-56"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-61"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-63"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-66"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-72"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-76"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-78"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-79"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-80"]["cfsqp"] = null;
-  benchmark["schittkowski"]["problem-81"]["cfsqp"] = null;
+  var cfsqp_fail = ["15", "16", "20", "25", "28", "33", "40", "47", "48", "49",
+                    "50", "51", "52", "53", "55", "56", "61", "63", "66", "72",
+                    "76", "78", "79", "80", "81"]
+  for (var i = 0, tot = cfsqp_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(cfsqp_fail[i])]["cfsqp"] = null;
+  }
 
-  benchmark["schittkowski"]["problem-13"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-16"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-20"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-25"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-28"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-44"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-55"]["ipopt"] = null;
-  benchmark["schittkowski"]["problem-56"]["ipopt"] = null;
+  var ipopt_fail = ["13", "16", "20", "25", "28", "44", "55", "56"]
+  for (var i = 0, tot = ipopt_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(ipopt_fail[i])]["ipopt"] = null;
+  }
 
-  benchmark["schittkowski"]["problem-13"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-16"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-20"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-25"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-28"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-44"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-55"]["ipopt-sparse"] = null;
-  benchmark["schittkowski"]["problem-56"]["ipopt-sparse"] = null;
+  var ipopt_sparse_fail = ["13", "16", "20", "25", "28", "44", "55", "56"]
+  for (var i = 0, tot = ipopt_sparse_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(ipopt_sparse_fail[i])]["ipopt-sparse"] = null;
+  }
 
+  var nag_nlp_fail = ["2", "8", "13", "14", "16", "20", "23",
+                      "25", "28", "33", "47", "55", "56", "72"]
+  for (var i = 0, tot = nag_nlp_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nag_nlp_fail[i])]["nag-nlp"] = null;
+  }
 
-  benchmark["schittkowski"]["problem-2"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-8"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-13"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-14"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-16"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-20"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-23"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-25"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-28"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-33"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-47"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-55"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-56"]["nag-nlp"] = null;
-  benchmark["schittkowski"]["problem-72"]["nag-nlp"] = null;
-
-  benchmark["schittkowski"]["problem-2"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-8"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-13"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-14"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-16"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-20"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-23"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-24"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-25"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-28"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-33"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-44"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-47"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-55"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-56"]["nag-nlp-sparse"] = null;
-  benchmark["schittkowski"]["problem-72"]["nag-nlp-sparse"] = null;
+  var nag_nlp_sparse_fail = ["2", "8", "13", "14", "16", "20", "23", "24",
+                             "25", "28", "33", "44", "47", "55", "56", "72"]
+  for (var i = 0, tot = nag_nlp_sparse_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nag_nlp_sparse_fail[i])]["nag-nlp-sparse"] = null;
+  }
 
   var nlopt_fail = ["2", "8", "9", "12", "16", "19", "20", "25", "26", "28",
                     "33", "34", "36", "43", "44", "47", "49", "51", "55",
@@ -153,13 +106,13 @@ sitemap:
   }
 
   var solverPrettyNames = {
-  "cfsqp": "CFSQP",
-  "ipopt": "IPOPT",
-  "ipopt-sparse": "IPOPT (sparse)",
-  "nag-nlp": "NAG",
-  "nag-nlp-sparse": "NAG (sparse)",
-  "nlopt": "NLopt (alpha)",
-  "pagmo": "PaGMO (alpha)"
+      "cfsqp":          "CFSQP",
+      "ipopt":          "IPOPT",
+      "ipopt-sparse":   "IPOPT (sparse)",
+      "nag-nlp":        "NAG",
+      "nag-nlp-sparse": "NAG (sparse)",
+      "nlopt":          "NLopt (alpha)",
+      "pagmo":          "PaGMO (alpha)"
   };
 
   google.load("visualization", "1", {packages:["corechart"]});
@@ -170,27 +123,27 @@ sitemap:
 
     data.addColumn('string', 'Solver');
     for (var problem in benchmark["schittkowski"]) {
-    for (var solver in benchmark["schittkowski"][problem]) {
-    data.addColumn('number',
-    solverPrettyNames[solver] ? solverPrettyNames[solver] : solver);
-    }
-    break;
+      for (var solver in benchmark["schittkowski"][problem]) {
+        data.addColumn('number',
+                       solverPrettyNames[solver] ? solverPrettyNames[solver] : solver);
+      }
+      break;
     }
 
     for (var problem in benchmark["schittkowski"]) {
-    var pbName = problem.replace('problem-', '');
-    pbName = ('000000' + pbName);
-    pbName = pbName.substr(pbName.length - 3);
-    var value = [pbName,];
-    for (var solver in benchmark["schittkowski"][problem]) {
-    value.push(parseFloat(
-    benchmark["schittkowski"][problem][solver] ?
-    benchmark["schittkowski"][problem][solver] :
-    null));
-    }
-    // TODO: Compute this value automatically
-    value.length = 8;
-    data.addRow(value);
+      var pbName = problem.replace('problem-', '');
+      pbName = ('000000' + pbName);
+      pbName = pbName.substr(pbName.length - 3);
+      var value = [pbName,];
+      for (var solver in benchmark["schittkowski"][problem]) {
+        value.push(parseFloat(
+          benchmark["schittkowski"][problem][solver] ?
+          benchmark["schittkowski"][problem][solver] :
+          null));
+      }
+      // TODO: Compute this value automatically
+      value.length = 8;
+      data.addRow(value);
     }
 
     data.sort([{column: 0}]);
@@ -199,26 +152,26 @@ sitemap:
     var columns = [];
     var series = {};
     for (var i = 0; i < data.getNumberOfColumns(); i++) {
-        columns.push(i);
-        if (i > 0) {
-            series[i - 1] = {};
-        }
+      columns.push(i);
+      if (i > 0) {
+        series[i - 1] = {};
+      }
     }
 
     var options = {
-    title: 'Hock-Schittkowski Collection Test Suite',
-    hAxis: {title: 'Time (seconds)'},
-    vAxis: {title: 'Problem Id'},
-    series: series
+      title: 'Hock-Schittkowski Collection Test Suite',
+      hAxis: {title: 'Time (seconds)'},
+      vAxis: {title: 'Problem Id'},
+      series: series
     };
 
     var chart = new google.visualization.BarChart(document.getElementById('benchmark_schittkowski'));
     google.visualization.events.addListener(chart, 'ready', function () {
       $("#benchmark_schittkowski_dl").html(
-      '<button type="button" class="btn btn-primary" id="benchmark_schittkowski_dl_btn"><span class="glyphicon glyphicon-download"></span> Download graph</button>');
-      $("#benchmark_schittkowski_dl_btn").click(function(){
-        window.location.href=chart.getImageURI();
-      });
+        '<button type="button" class="btn btn-primary" id="benchmark_schittkowski_dl_btn"><span class="glyphicon glyphicon-download"></span> Download graph</button>');
+        $("#benchmark_schittkowski_dl_btn").click(function(){
+          window.location.href=chart.getImageURI();
+        });
     });
 
     chart.draw(data, options);
@@ -265,3 +218,5 @@ sitemap:
     });
   }
 </script>
+
+<!-- vim: set ts=2 sw=2 ft=liquid si: -->
