@@ -120,6 +120,17 @@ sitemap:
       "pagmo":          "PaGMO (alpha)"
   };
 
+  var bench_colors = [
+    'blue',
+    'red',
+    'orange',
+    'green',
+    'purple',
+    'dodgerblue',
+    'magenta'
+  ]
+
+
   function problemNameToId(pbName)
   {
     var pbId = pbName.replace('problem-', '');
@@ -152,17 +163,22 @@ sitemap:
                         .sortBy(function(el){ return el; })
                         .value();
 
-  // Benchmark data: name (solver), data (for each problem)
+  // Benchmark data: name (solver), data (for each problem), color, index
   result["series"] = _.chain(result["solvers"])
                       .map(function(el) {
                         var solver_data = {};
                         // Solver name
                         solver_data["name"] = (solverPrettyNames[el] ? solverPrettyNames[el] : el);
+                        // Index
+                        var index = _.indexOf(_.keys(solverPrettyNames), el);
+                        solver_data["index"] = _.size(_.keys(solverPrettyNames)) - index;
+                        solver_data["legendIndex"] = index;
+                        // Color
+                        solver_data["color"] = bench_colors[index];
                         // Solver data for each problem
                         solver_data["data"] = _.map(result["problems"],
                                                     function(pbId) {
                                                       try {
-                                                        console.log(problems[problemIdToName(pbId)][el])
                                                         var value = parseFloat(problems[problemIdToName(pbId)][el]);
                                                         return value;
                                                       }
@@ -195,14 +211,15 @@ sitemap:
             enabled: false
           },
           borderWidth: 0.2,
-          pointPadding: 0.2
+          pointPadding: 0.2,
         }
       },
       xAxis: {
         categories: result["problems"],
         title: {
           text: "Problem Id"
-        }
+        },
+        reversed: true
       },
       yAxis: {
         min: 0,
@@ -219,7 +236,8 @@ sitemap:
         floating: true,
         borderWidth: 1,
         backgroundColor: '#FFFFFF',
-        shadow: true
+        shadow: true,
+        reversed: false
       },
       exporting: {
         sourceHeight: 2100,
