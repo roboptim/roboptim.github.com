@@ -104,7 +104,7 @@ sitemap:
   }
 
   var pagmo_fail = ["6", "7", "10", "13", "15", "24", "26", "27", "31", "39",
-                    "40", "47", "55", "56", "60", "61", "63", "71", "78", "79",
+                    "40", "47", "56", "60", "61", "63", "71", "78", "79",
                     "80", "81", "71b"]
   for (var i = 0, tot = pagmo_fail.length; i < tot; i++) {
       benchmark["schittkowski"]["problem-".concat(pagmo_fail[i])]["pagmo"] = null;
@@ -241,6 +241,7 @@ sitemap:
       },
       exporting: {
         sourceHeight: 2100,
+        filename: "hock_schittkowski_benchmark"
       },
       series: result["series"]
     });
