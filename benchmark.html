@@ -193,7 +193,9 @@ sitemap:
         bar: {
           dataLabels: {
             enabled: false
-          }
+          },
+          borderWidth: 0.2,
+          pointPadding: 0.2
         }
       },
       xAxis: {
@@ -218,6 +220,9 @@ sitemap:
         borderWidth: 1,
         backgroundColor: '#FFFFFF',
         shadow: true
+      },
+      exporting: {
+        sourceHeight: 2100,
       },
       series: result["series"]
     });
