@@ -1,0 +1,6 @@
+- name: roboptim-capsule
+  title: RobOptim Capsule
+  description: "An automated optimal capsule generator over polyhedrons."
+  url: https://github.com/roboptim/roboptim-capsule
+  image: capsule.png
+
