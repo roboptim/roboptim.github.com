@@ -194,10 +194,14 @@ sitemap:
 
   console.log(result)
 
+  var size = 6;
+  var height = _.size(result["problems"]) * _.size(result["solvers"]) * 2 * size
+
   $(function() {
     $('#benchmark_schittkowski').highcharts({
       chart: {
-        type: 'bar'
+        type: 'bar',
+        height: height
       },
       title: {
         text: 'Hock-Schittkowski Collection Test Suite'
@@ -210,8 +214,8 @@ sitemap:
           dataLabels: {
             enabled: false
           },
-          borderWidth: 0.2,
-          pointPadding: 0.2,
+          borderWidth: 0,
+          pointWidth: size
         }
       },
       xAxis: {
@@ -240,7 +244,7 @@ sitemap:
         reversed: false
       },
       exporting: {
-        sourceHeight: 2100,
+        sourceHeight: height,
         filename: "hock_schittkowski_benchmark"
       },
       series: result["series"]
