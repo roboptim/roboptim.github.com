@@ -95,7 +95,7 @@
   type: Nonlinear
   feature:
     constraint: yes
-  status: wanted
+  status: experimental
   upstream:
     name: KNITRO
     url: http://www.ziena.com/knitro.htm
