@@ -31,6 +31,13 @@ disqus: true
           <p class="flex-caption">{{ project.description }}</p>
         {% endif %}
         </li>
+      {% else if project.video %}
+        <li class="slide play3">
+          <iframe width="560" height="200" id="youtubevideo"
+            title="{{ project.title }}"
+            src="http://www.youtube.com/embed/{{ project.video.youtube_id}}?enablejsapi=1&version=3&playerapiid=youtubevideo&vq=hd720"
+            allowfullscreen frameborder="0"></iframe>
+        </li>
       {% endif %}
     {% endfor %}
   </ul>
@@ -45,17 +52,35 @@ disqus: true
 
 <!-- Load custom slider style -->
 <link rel="stylesheet" href="slider.css" type="text/css">
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+
+<!-- Load YouTube player -->
+<script src="js/flexslider-youtube.js"></script>
+<script src="js/jquery.fitvids.js"></script>
 
 <script type="text/javascript">
   // Initialize FlexSlider
   $(window).load(function() {
-    $('.flexslider').flexslider({
+    $('.flexslider')
+    .fitVids()
+    .flexslider({
       animation: "slide",
       //controlNav: "thumbnails",
       directionNav: true,
-      slideshowSpeed: 5000,
+      // TODO: need to stop slideshow while playing videos to handle this
+      slideshow:false,
+      slideshowSpeed: 7500,
+      animationLoop: true,
       animationSpeed: 600,
-      touch: true
+      pauseOnAction: true,
+      pauseOnHover: true,
+      touch: true,
+      smoothHeight: true,
+      video: true,
+      before: function(slider){
+        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+          $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+      }
     });
   });
 </script>
