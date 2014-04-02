@@ -179,7 +179,14 @@ sitemap:
                         solver_data["data"] = _.map(result["problems"],
                                                     function(pbId) {
                                                       try {
-                                                        var value = parseFloat(problems[problemIdToName(pbId)][el]);
+                                                          var value = {
+					                    dataLabels: {
+					                      enabled: true,
+							      format: "<b>" + solver_data["name"] + "</b>",
+							      useHtml: true,
+					                    },
+					                    y: parseFloat(problems[problemIdToName(pbId)][el])
+					                };
                                                         return value;
                                                       }
                                                       catch(err) {
@@ -194,14 +201,14 @@ sitemap:
 
   console.log(result)
 
-  var size = 6;
+  var size = 10;
   var height = _.size(result["problems"]) * _.size(result["solvers"]) * 2 * size
 
   $(function() {
     $('#benchmark_schittkowski').highcharts({
       chart: {
-        type: 'bar',
-        height: height
+          type: 'bar',
+	  height: height
       },
       title: {
         text: 'Hock-Schittkowski Collection Test Suite'
@@ -210,38 +217,26 @@ sitemap:
         text: 'RobOptim Benchmark'
       },
       plotOptions: {
-        bar: {
-          dataLabels: {
-            enabled: false
+          bar: {
+	    pointPadding: 100
           },
-          borderWidth: 0,
-          pointWidth: size
-        }
+	  series: {
+            pointPadding: 0.1,
+            groupPadding: 0.1,
+          }
       },
       xAxis: {
         categories: result["problems"],
         title: {
           text: "Problem Id"
         },
-        reversed: true
+        reversed: true,
       },
       yAxis: {
         min: 0,
         title: {
           text: "Time (seconds)"
         }
-      },
-      legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 100,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: '#FFFFFF',
-        shadow: true,
-        reversed: false
       },
       exporting: {
         sourceHeight: height,
