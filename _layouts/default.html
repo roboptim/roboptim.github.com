@@ -100,13 +100,32 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-	      {% assign pages_list = site.pages %}
-	      {% assign group = 'navigation' %}
-	      {% include pages_list.html %}
+	      {% include nav_element.html title="<span class='glyphicon glyphicon-download'></span> Download" url="/download.html" %}
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>
+		  Documentation <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  {% include nav_element.html title="Getting Started" url="/getting-started.html" %}
+		  {% include nav_element.html title="Solvers" url="/solvers.html" %}
+		  {% include nav_element.html title="Showcase" url="/showcase.html" %}
+		  {% include nav_element.html title="Benchmark" url="/benchmark.html" %}
+		  <li class="divider"></li>
+		  {% include nav_element.html title="API Documentation" url="/documentation.html" %}
+		</ul>
+	      </li>
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
+		  Development <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  {% include nav_element.html title="Development Dashboard" url="/development.html" %}
+		  <li class="divider"></li>
+		  <li><a href="http://www.github.com/roboptim/">View on GitHub</a></li>
+		</ul>
+	      </li>
+
               <li><a href="https://groups.google.com/forum/#!forum/roboptim">
 		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
-              <li><a href="http://www.github.com/roboptim/">
-		  <span class="glyphicon glyphicon-download"></span> View on GitHub</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
