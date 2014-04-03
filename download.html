@@ -71,16 +71,18 @@ disqus: yes
 <div class="tab-content" style="padding-top: 1.75em">
   <div class="tab-pane" id="arch">
     <div class="bs-callout bs-callout-info">
-      <p>While not available into the main repository, RobOptim is
-      available on Arch Linux using the AUR repository.
+      <p>While not available in the official repositories, RobOptim is
+          available on Arch Linux using the <a href="https://aur.archlinux.org/packages/?K=roboptim" target="_blank">AUR</a>.
       </p>
     </div>
 
     <p>If you are using Arch Linux, please open a terminal and run the following command:</p>
 
     {% highlight bash %}
-    # To install RobOptim Core
-    $ sudo yaourt roboptim-core
+    # To install RobOptim Core with yaourt:
+    $ yaourt roboptim-core
+    # or with packer:
+    $ packer roboptim-core
     {% endhighlight %}
   </div>
   <div class="tab-pane active" id="debian">
