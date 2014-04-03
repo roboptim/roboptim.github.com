@@ -7,15 +7,13 @@ disqus: yes
 
 <h1 id="download" class="page-header">{{ page.title }}</h1>
 
-<h2>Source Download</h2>
-
 <div class="table-responsive">
   <table class="table table-condensed" id="status">
     <thead>
       <tr>
 	<td><em>Package</em></td>
-	<td>Last Release</td>
-	<td>Git URL</td>
+	<td>Latest Release</td>
+	<td>Availability in Linux Distributions</td>
       </tr>
     </thead>
     <tbody>
@@ -25,41 +23,174 @@ disqus: yes
 	<td id="{{ package.github }}-dl-link">{{ package.name }}</td>
 	<td id="{{ package.github }}-version">
 	  {% for version in package.releases %}
-	  <a href="https://github.com/roboptim/roboptim-core/releases/tag/v{{ version }}">{{ version }}</a>
+	  <a href="https://github.com/roboptim/{{ package.github }}/releases/tag/v{{ version }}">{{ version }}</a>
 	  {% endfor %}
 	  {% unless package.releases.size %}
 	  n/a
 	  {% endunless %}
 	</td>
-	<td id="{{ package.github }}-git-url">https://github.com/roboptim/{{ package.github }}.git</td>
+	<td><span id="osw_{{ package.github }}"></span><br><span id="osw_lib{{ package.github }}2"></span></td>
       </tr>
       {% endif %}
       {% endfor %}
     </tbody>
   </table>
+
+  <p>
+    <a href="http://oswatershed.org/"><img style="border: none; padding-right: 4px;" src="http://static.oswatershed.org/small_logo.png" /></a>
+    Statistics regarding releases availability in Linux Distributions is provided by OS Waterfall.
+  </p>
+
 </div>
 
-<div class="bs-callout bs-callout-info">
-  <h4>If you clone our Git repositories...</h4>
-  <p>RobOptim repositories use submodules, if you clone them, do not
-    forget to pass the <code>--recursive</code> option: <code>$ git
-      clone --recursive https://github.com/...</code></p>
+<h2>How to install RobOptim on your machine?</h2>
+
+<ul class="nav nav-tabs" id="howto">
+  <li><a href="#arch" data-toggle="tab"><img src="http://static.oswatershed.org/arch.png"> Arch Linux</a></li>
+  <li class="active"><a href="#debian" data-toggle="tab"><img src="http://static.oswatershed.org/debian.png">
+      Debian / <img src="http://static.oswatershed.org/ubuntu.png"> Ubuntu</a></li>
+  <li><a href="#fedora" data-toggle="tab"><img src="http://static.oswatershed.org/fedora.png"> Fedora</a></li>
+  <li><a href="#robotpkg" data-toggle="tab">robotpkg</a></li>
+  <li><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span> Source</a></li>
+</ul>
+
+<div class="tab-content" style="padding-top: 1.75em">
+  <div class="tab-pane" id="arch">
+    <div class="bs-callout bs-callout-info">
+      <p>While not available into the main repository, RobOptim is
+      available on Arch Linux using the AUR repository.
+      </p>
+    </div>
+
+    <p>If you are using Arch Linux, please open a terminal and run the following command:</p>
+
+    {% highlight bash %}
+    # To install RobOptim Core
+    $ sudo yaourt roboptim-core
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane active" id="debian">
+
+    <p>If you are using Debian or Ubuntu, please open a terminal and run the following command:</p>
+
+    {% highlight bash %}
+    $ sudo apt-get install libroboptim-core-dev
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="fedora">
+
+    <p>If you are using Fedora, please open a terminal and run the following command:</p>
+
+    {% highlight bash %}
+    $ sudo yum install roboptim-core-devel
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="robotpkg">
+
+    <p>If you are using RobotPkg, please open a terminal and run the
+    following command:</p>
+
+    {% highlight bash %}
+    # from your robotpkg directory
+    $ cd optimization/roboptim-core && make update
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="source">
+    <div class="bs-callout bs-callout-danger">
+      <p><span class='glyphicon glyphicon-warning-sign'></span>
+	Compiling from source is significantly more challenging than
+	installing a binary package. Be prepared to face compilation
+	errors, software bugs and crashes.
+      </p>
+    </div>
+
+    <h3>Dependencies</h3>
+
+    First, install the following tools on your system:
+
+    <ul>
+      <li>CMake</li>
+      <li>gcc, g++</li>
+      <li>Doxygen (and eventually LaTeX for mathematical formula rendering)</li>
+      <li>Boost</li>
+      <li>Eigen</li>
+      <li>Log4cxx</li>
+    </ul>
+
+    And then follow one of the two next steps depending on your needs.
+
+    <h3>Installing a release from source</h3>
+
+    {% highlight bash %}
+    # Uncompress the tarball (replace X.Y by the proper version number)
+    $ tar xzvf roboptim-core-X.Y.tar.gz
+    # Move to the newly created directory
+    $ cd roboptim-core-X.Y
+    # Create build directory
+    $ make _build && cd _build
+    # Run cmake or ccmake and set the installation options as needed
+    # Note: RelWithDebInfo is the prefered value for CMAKE_BUILD_TYPE
+    #       Debug (or no value) is considerable slower than release mode.
+    $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/your/install/prefix ..
+    # Build the software
+    $ make
+    # Run the test suite
+    $ make test
+    # Install the software
+    $ make install
+    {% endhighlight %}
+
+    <h3>Installing from Git</h3>
+
+    {% highlight bash %}
+    $ git clone --recursive git://github.com/roboptim/roboptim-core.git
+    # Move to the newly created directory
+    $ cd roboptim-core
+    # Create build directory
+    $ make _build && cd _build
+    # Run cmake or ccmake and set the installation options as needed
+    # Note: RelWithDebInfo is the prefered value for CMAKE_BUILD_TYPE
+    #       Debug (or no value) is considerable slower than release mode.
+    $ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/your/install/prefix ..
+    # Build the software
+    $ make
+    # Run the test suite
+    $ make test
+    # Install the software
+    $ make install
+    {% endhighlight %}
+  </div>
 </div>
 
+<script type="text/javascript">
+  $(function () { $('#howto a:last').tab('show') })
+</script>
 
-<h2>Supported Linux Distribution</h2>
+<script type="text/javascript">
+  package_badge = function(package, element) {
+  $.getJSON("http://api.oswatershed.org/api/0.1/package.json?cb=?", {package: package}, function(data) {
+  $(element).css({"font-family": "sans-serif"})
+  $(element).append('<a style="color: black; text-decoration: none;" id="pkglink" href="http://oswatershed.org/pkg/'+data.package+'"></a>');
+  $(element+" #pkglink").append(data.package);
+  $(element+" #pkglink").append('<strong> '+data.latest+'</strong>');
+  $.each(data.distros, function(i,distro) {
+  $(element+" #pkglink").append('<img style="border: none; padding-left: 8px; padding-right: 4px;" src="http://static.oswatershed.org/'+distro.logo+'" />');
+  if (distro.uptodate)
+  $(element+" #pkglink").append('<strong>'+distro.version+'</strong>');
+  else
+  $(element+" #pkglink").append(distro.version);
+  });
+  }, "jsonp");
+  }
+</script>
 
-<p>If you do not need recent features, we recommend you use the
-  packages provided by your Linux distribution. RobOptim is available
-  on the following Linux Distributions:
-  <ul>
-    <li>Arch Linux</li>
-    <li>Fedora Core</li>
-    <li>Debian</li>
-    <li>Ubuntu</li>
-  </ul>
-</p>
-
-<p>RobOptim is also available as a RobotPkg package.</p>
+{% for package in site.data.packages %}
+{% if package.status == 'stable' %}
+<script type="text/javascript">
+  $(document).ready(function(){ package_badge("{{ package.github }}", "#osw_{{ package.github }}"); });
+  $(document).ready(function(){ package_badge("lib{{ package.github }}2", "#osw_lib{{ package.github }}2"); });
+</script>
+{% endif %}
+{% endfor %}
 
 <div style="padding: 10em"></div>
