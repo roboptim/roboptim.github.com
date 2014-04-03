@@ -130,6 +130,29 @@ sitemap:
     'magenta'
   ]
 
+  // Add data labels to bars
+  // Note: this kinda botches display, so only use it locally
+  var use_data_labels = false;
+
+  // Put the legend at the top of the graph
+  // Note: this is probably better for display on a website
+  var use_top_legend = true;
+
+  var legend = {};
+
+  if (use_top_legend)
+    {
+      legend["align"] = 'right';
+      legend["layout"] = 'vertical';
+      legend["verticalAlign"] = 'top';
+      legend["x"] = -40;
+      legend["y"] = 100;
+      legend["floating"] = true;
+      legend["borderWidth"] = 1;
+      legend["backgroundColor"] = '#FFFFFF';
+      legend["shadow"] = true;
+      legend["reversed"] = false;
+  }
 
   function problemNameToId(pbName)
   {
@@ -180,13 +203,13 @@ sitemap:
                                                     function(pbId) {
                                                       try {
                                                           var value = {
-					                    dataLabels: {
-					                      enabled: true,
-							      format: "<b>" + solver_data["name"] + "</b>",
-							      useHtml: true,
-					                    },
-					                    y: parseFloat(problems[problemIdToName(pbId)][el])
-					                };
+                                                            dataLabels: {
+                                                              enabled: use_data_labels,
+                                                              format: "<b>" + solver_data["name"] + "</b>",
+                                                              useHtml: true,
+                                                            },
+                                                            y: parseFloat(problems[problemIdToName(pbId)][el])
+                                                          };
                                                         return value;
                                                       }
                                                       catch(err) {
@@ -208,7 +231,7 @@ sitemap:
     $('#benchmark_schittkowski').highcharts({
       chart: {
           type: 'bar',
-	  height: height
+          height: height
       },
       title: {
         text: 'Hock-Schittkowski Collection Test Suite'
@@ -218,9 +241,9 @@ sitemap:
       },
       plotOptions: {
           bar: {
-	    pointPadding: 100
+            pointPadding: 100
           },
-	  series: {
+          series: {
             pointPadding: 0.1,
             groupPadding: 0.1,
           }
@@ -238,6 +261,7 @@ sitemap:
           text: "Time (seconds)"
         }
       },
+      legend: legend,
       exporting: {
         sourceHeight: height,
         filename: "hock_schittkowski_benchmark"
