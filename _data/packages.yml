@@ -50,6 +50,10 @@
   github: roboptim-analysis
   status: beta
 
+- name: RobOptim Capsule
+  github: roboptim-capsule
+  status: beta
+
 - name: RobOptim Trajectory
   github: roboptim-trajectory
   status: stable
