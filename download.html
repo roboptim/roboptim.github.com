@@ -204,7 +204,6 @@ disqus: yes
 {% if package.status == 'stable' %}
 <script type="text/javascript">
   $(document).ready(function(){ package_badge("{{ package.github }}", "#osw_{{ package.github }}"); });
-  $(document).ready(function(){ package_badge("lib{{ package.github }}2", "#osw_lib{{ package.github }}2"); });
 </script>
 {% endif %}
 {% endfor %}
