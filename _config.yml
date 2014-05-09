@@ -1,3 +1,5 @@
 name: RobOptim
 markdown: redcarpet
 pygments: true
+gems:
+    - jekyll-sitemap
