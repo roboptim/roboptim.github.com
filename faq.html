@@ -56,7 +56,7 @@ screenshot shows the output of KCacheGrind after solving the problem
 simplicity, the optimization problem is rebuilt from scratch at each
 time so 100000 optimization problems are built in this case.</p>
 
-
+<hr>
 <div class="media">
   <a href="assets/faq/kcachegrind1.png" class="pull-right">
     <img src="assets/faq/kcachegrind1-mini.png"
@@ -81,25 +81,36 @@ time so 100000 optimization problems are built in this case.</p>
 
   </div>
 </div>
+<hr>
+<div class="media">
+  <a href="assets/faq/kcachegrind2.png" class="pull-left">
+    <img src="assets/faq/kcachegrind2-mini.png"
+	 alt="kcachegrind screenshot time spent in each function"
+	 class="media-object img-responsive">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Time spent in each function</h4>
 
+    <ul>
 
-<ul>
+      <li>84% of the total execution time is spent in one function of the
+	solver. RobOptim cannot have any impact on the run-time of this
+	function as no code from the framework is used at this point. The
+	remaining 16% gathers problem creation, display, solver
+	initialization and RobOptim run-time cost.</li>
 
-  <li>84% of the total execution time is spent in one function of the
-    solver. RobOptim cannot have any impact on the run-time of this
-    function as no code from the framework is used at this point. The
-    remaining 16% gathers problem creation, display, solver
-    initialization and RobOptim run-time cost.</li>
+      <li>The most time consuming RobOptim related function
+	is <code>array_to_vector</code>, it only represents 0.42% of the
+	total execution time.</li>
 
-  <li>The most time consuming RobOptim related function
-    is <code>array_to_vector</code>, it only represents 0.42% of the
-    total execution time.</li>
+      <li>99% of the time is spent in the <code>solve</code> function
+	indicating that problem definition in RobOptim is reasonable
+	efficient.</li>
 
-  <li>99% of the time is spent in the <code>solve</code> function
-  indicating that problem definition in RobOptim is reasonable
-  efficient.</li>
-
-</ul>
+    </ul>
+  </div>
+</div>
+<hr>
 
 <p>Profiling data shows that RobOptim does not decrease optimization
 efficiency. The infrastructure code is efficient and rarely
