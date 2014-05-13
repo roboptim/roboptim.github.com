@@ -21,27 +21,27 @@ infrastructure may appear. For instance:</p>
 <ul>
   <li>Copies are made between RobOptim and the underlying solvers for
   technical reasons such as memory alignment and Eigen (former)
-  limitations. Other Copies may have to be done to decouple the solver
+  limitations. Other copies may have to be done to decouple the solver
   data from the RobOptim problem. This could be solved in the future
-  by using Eigen new <code>Ref</code> feature.</li>
+  by using Eigen's new <code>Ref</code> feature.</li>
 
   <li><code>impl_compute</code>, <code>impl_gradient</code>, etc. are
-  virtual functions and hence their call is slightly slower than with
+  virtual functions, hence their call is slightly slower than with
   non-virtual functions.</li>
 
   <li>RobOptim stores meta-information about the problem (function
   titles, sizes, etc.) and may need to allocate more memory than a
   custom-made program. Additional time spent in allocation routines,
-  cache miss, loss of memory locality induced by additional allocation
-  may cause the optimization to run slower in particular
-  cases. However, stable RobOptim components takes great care of never
+  cache miss, or loss of memory locality induced by additional
+  allocation may cause the optimization to run slower in particular
+  cases. However, stable RobOptim components take great care of never
   allocating memory during the optimization process.</li>
 </ul>
 
 
 Additionally, the use of RobOptim filters, logging, finite
 differentiation may lead to slow resolution. All these previously
-mentioned features are optional and not always provided by sovlers.
+mentioned features are optional and not always provided by solvers.
 
 
 <h3>Example: profiling of Inverse Kinematics problem resolution
@@ -54,7 +54,7 @@ position in the operational space (Euclidian space). The following
 screenshot shows the output of KCacheGrind after solving the problem
 100 times for 100 different reachable positions chosen randomly. For
 simplicity, the optimization problem is rebuilt from scratch at each
-time so 100000 optimization problems are built in this case.</p>
+time so that 10000 optimization problems are built in this case.</p>
 
 <hr>
 <div class="media">
@@ -69,14 +69,14 @@ time so 100000 optimization problems are built in this case.</p>
     <p>KCacheGrind displays the Callee Map of the <code>main</code>
       function. On the Callee Map, each function called by the "main"
       function is displayed. The area of each box matches the time
-      spent in each function. Data are generated using Valgrind
+      spent in each function. Data are generated using Valgrind's
       callgrind tool on Ubuntu 12.04 Precise Pangolin (64-bits),
       GCC 4.6.3.
     </p>
 
     <p>The two large blocks are calls to
     the <code>ql0002_</code>. This function is internal to the solver
-    used in this case (CFSQP) and do not call any code from
+    used in this case (CFSQP) and does not call any code from
     RobOptim. <small>Click to enlarge the picture.</small></p>
 
   </div>
@@ -104,7 +104,7 @@ time so 100000 optimization problems are built in this case.</p>
 	total execution time.</li>
 
       <li>99% of the time is spent in the <code>solve</code> function
-	indicating that problem definition in RobOptim is reasonable
+	indicating that problem definition in RobOptim is reasonably
 	efficient.</li>
 
     </ul>
@@ -116,15 +116,15 @@ time so 100000 optimization problems are built in this case.</p>
 efficiency. The infrastructure code is efficient and rarely
 called. The checks are efficiently disabled and optimized out in
 release mode. Building the problem may be more efficient without
-RobOptim but is fast enough even when RobOptim is used. Furthermore,
+RobOptim, but is fast enough even when RobOptim is used. Furthermore,
 problem building is a one-time cost.</p>
 
-<p>If you experience a lack of efficiency while using RobOptim, check
+<p>If you experience a lack of efficiency while using RobOptim, make sure
 you are compiling in release mode. Binary packages are always built
-this way. You should also pass the appropriate flag to your own
+this way. You should also pass the appropriate flags to your own
 project (i.e. <code>-DNDEBUG -O3</code>). Your experience may also
-vary depending on the solver you use. Younger, unstable, solvers may
+vary depending on the solver you use. Younger, unstable plug-ins may
 be slower as they may copy uselessly data around or do not use the
 solver API in the most efficient way. Check
 the <a href="solvers.html">solvers page</a> and look for stable,
-matures solvers bridges.</p>
+mature solver bridges.</p>
