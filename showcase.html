@@ -123,7 +123,11 @@ disqus: true
               {% endif %}
             {% endfor %}
           </td>
-          <td id="{{ paper.id }}-book-title">{{paper.container-title}}</td>
+          {% if paper.container-title %}
+            <td id="{{ paper.id }}-book-title">{{paper.container-title}}</td>
+          {% else if paper.type == 'thesis' %}
+            <td id="{{ paper.id }}-thesis">Thesis</td>
+          {% endif %}
           <td id="{{ paper.id }}-year">{{paper.year}}</td>
           <td id="{{ paper.id }}-url">
             {% if paper.URL %}
