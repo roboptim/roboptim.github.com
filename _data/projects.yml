@@ -1,3 +1,8 @@
+- name: pg-ellipses
+  title: Non-Inclusive Contacts
+  description: "Integration of Non-Inclusive Contacts in Posture Generation."
+  image: ellipses.png
+
 - name: roboptim-capsule
   title: RobOptim Capsule
   description: "An automated optimal capsule generator over polyhedrons."
