@@ -64,6 +64,7 @@ disqus: yes
   <li class="active"><a href="#debian" data-toggle="tab"><img src="http://static.oswatershed.org/debian.png">
       Debian / <img src="http://static.oswatershed.org/ubuntu.png"> Ubuntu</a></li>
   <li><a href="#fedora" data-toggle="tab"><img src="http://static.oswatershed.org/fedora.png"> Fedora</a></li>
+  <li><a href="#homebrew" data-toggle="tab">Max OS X (Homebrew)</a></li>
   <li><a href="#robotpkg" data-toggle="tab">robotpkg</a></li>
   <li><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span> Source</a></li>
 </ul>
@@ -109,6 +110,27 @@ disqus: yes
     {% highlight bash %}
     # from your robotpkg directory
     $ cd optimization/roboptim-core && make update
+    {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="homebrew">
+    <div class="bs-callout bs-callout-info">
+      <p>RobOptim is available through an additional repository
+      <a href="http://www.github.com/roboptim/homebrew-roboptim"
+      target="_blank">homebrew-roboptim</a>.
+      </p>
+    </div>
+
+    <p>If you are using Homebrew on Mac OS X, you will need to run the commands:</p>
+
+    {% highlight bash %}
+    # We make assumption that you already installed Homebrew!
+    # If this is not the case, please consult: http://brew.sh/
+
+    # Add the repository:
+    $ brew tap roboptim/roboptim
+
+    # RobOptim Core
+    $ brew install roboptim/roboptim/roboptim-core
     {% endhighlight %}
   </div>
   <div class="tab-pane" id="source">
