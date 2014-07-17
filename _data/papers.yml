@@ -16,6 +16,7 @@
   year: 2014
   container-title: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS'2014)
   type: book
+  URL: http://hal.archives-ouvertes.fr/hal-01016319
 - id: moulard:robomec:2013
   title: "RobOptim: an Optimization Framework for Robotics"
   author:
