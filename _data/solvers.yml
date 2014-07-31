@@ -128,5 +128,5 @@
   status: wanted
   upstream:
     name: Ceres
-    url: https://code.google.com/p/ceres-solver/
+    url: http://ceres-solver.org
   github: false
