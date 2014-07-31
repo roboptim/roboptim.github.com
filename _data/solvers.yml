@@ -109,7 +109,7 @@
   upstream:
     name: LANCELOT
     url: http://www.numerical.rl.ac.uk/lancelot/blurb.html
-  github: \#
+  github: false
 - name: SNOPT
   license: Proprietary
   type: Nonlinear
@@ -119,7 +119,7 @@
   upstream:
     name: SNOPT
     url: http://www.sbsi-sol-optimize.com/asp/sol_product_snopt.htm
-  github: \#
+  github: false
 - name: Ceres (Google)
   license: BSD
   type: Nonlinear Least Squares
@@ -129,4 +129,4 @@
   upstream:
     name: Ceres
     url: https://code.google.com/p/ceres-solver/
-  github: \#
+  github: false
