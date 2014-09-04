@@ -41,7 +41,7 @@ disqus: true
     </tbody>
   </table>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="github_token_info">
     <h4>Access to all developer information...</h4>
 
     <p>
@@ -50,12 +50,12 @@ disqus: true
     </p>
 
     <button type="button" class="btn btn-primary" id="github_login">
-      <span class="glyphicon glyphicon-new-window"></span> Login with GitHub
+      <span class="glyphicon glyphicon-new-window"></span>Login with GitHub
     </button>
   </div>
 
 
-  <div style="padding:5em">&nbsp;</div>
+  <div style="padding:2em">&nbsp;</div>
   <h2>Thank You!</h2>
 
   <div class="container marketing">
@@ -86,8 +86,8 @@ disqus: true
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Test Reports by CoverAlls.io</h2>
-        <p class="lead"><a href="http://www.coveralls.io/">CoverAlls</a> summarizes RobOptim test coverage.</p>
+        <h2 class="featurette-heading">Test Reports by Coveralls.io</h2>
+        <p class="lead"><a href="http://www.coveralls.io/">Coveralls</a> summarizes RobOptim test coverage.</p>
       </div>
       <div class="col-md-5">
 	&nbsp;
@@ -99,12 +99,19 @@ disqus: true
 
 
   <script type="text/javascript">
+    // Initialize OAuth
     OAuth.initialize('ynP-FCRXCMX1_o-qM0Kv6n8mOJY')
+
+    // If click the GitHub button
     $("#github_login").click(function(){
       OAuth.popup('github', function(err, result) {
         if (result) {
+          // Store token
           window.localStorage.setItem('access_token', result.access_token);
           console.log(result.access_token);
+
+          // Reload page to hide token block
+          location.reload();
         } else {
           console.log(err);
         };
@@ -112,6 +119,25 @@ disqus: true
     });
 
     var access_token = window.localStorage.getItem('access_token');
+
+    if (access_token) {
+      // Test the validity of the local token (may have been revoked)
+      url = "https://api.github.com/user?access_token=" + access_token;
+      $.get(url, function (data) {
+        console.log("Valid access token found.");
+
+        // Do not display GitHub token block if token is already registered
+        document.getElementById("github_token_info").style.display = "none";
+      })
+      .fail(function() {
+        console.log("Invalid access token found. Removing it.");
+
+        // Remove the unvalid token
+        window.localStorage.removeItem('access_token');
+        access_token = null;
+      });
+    }
+
     var stateToStyle = {
     "passed": "",
     "errored": "active",
