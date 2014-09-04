@@ -102,11 +102,11 @@ disqus: true
     // Initialize OAuth
     OAuth.initialize('ynP-FCRXCMX1_o-qM0Kv6n8mOJY')
 
-    // If click the GitHub button
+    // If the user clicks on the GitHub button
     $("#github_login").click(function(){
       OAuth.popup('github', function(err, result) {
         if (result) {
-          // Store token
+          // Store token in local storage
           window.localStorage.setItem('access_token', result.access_token);
           console.log(result.access_token);
 
@@ -118,21 +118,22 @@ disqus: true
       });
     });
 
+    // Load token from local storage
     var access_token = window.localStorage.getItem('access_token');
 
     if (access_token) {
-      // Test the validity of the local token (may have been revoked)
+      // Test the validity of the local token (it may have been revoked)
       url = "https://api.github.com/user?access_token=" + access_token;
       $.get(url, function (data) {
         console.log("Valid access token found.");
 
-        // Do not display GitHub token block if token is already registered
+        // Do not display the GitHub token block if the token is already registered
         document.getElementById("github_token_info").style.display = "none";
       })
       .fail(function() {
         console.log("Invalid access token found. Removing it.");
 
-        // Remove the unvalid token
+        // Remove the invalid token and nullify it
         window.localStorage.removeItem('access_token');
         access_token = null;
       });
