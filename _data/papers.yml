@@ -1,3 +1,16 @@
+- id: moulard:rsj:2014
+  title: "Software Tools for Nonlinear Optimization: Modern Solvers and Toolboxes for Robotics"
+  author:
+  - family: Moulard
+    given: Thomas
+  - family: Chrétien
+    given: Benjamin
+  - family: Yoshida
+    given: Eiichi
+  year: 2014
+  container-title: Journal of the Robotics Society of Japan (日本ロボット学会誌), Vol. 32(6), pp. 536-541
+  type: book
+  URL: http://staff.aist.go.jp/e.yoshida/papers/moulard_rsj14.pdf
 - id: brossette:iros:2014
   title: "Integration of Non-Inclusive Contacts in Posture Generation"
   author:
