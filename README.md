@@ -5,7 +5,8 @@ RobOptim Website.
 
 ## Testing locally
 
-In order to test your modifications locally before pushing to GitHub, install `jekyll`, and run the following command at the root of the project folder:
+In order to test your modifications locally before pushing to GitHub, install
+`jekyll`, and run the following command at the root of the project folder:
 
 ```sh
 $ jekyll server --safe --trace
@@ -24,4 +25,14 @@ Configuration file: /path/to/roboptim.github.com/_config.yml
   Server running... press ctrl-c to stop
 ```
 
-Then simply type the server address in your browser (`http://0.0.0.0:4000/` here).
+Then simply type the server address in your browser (`http://0.0.0.0:4000/`
+here).
+
+## Updating documentation pages
+
+Some pages are downloaded from the online documentation of `roboptim-core`. To
+update these pages, simply run:
+
+```sh
+$ ./_includes/doc/refresh-doc
+```
