@@ -1,4 +1,17 @@
 #!/bin/sh
+
+# Doc directory
+doc_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+pushd $doc_dir
+
+mkdir -p roboptim-core
+
 echo "Downloading getting-started.html"
-rm roboptim-core/getting-started.html
+rm -f roboptim-core/getting-started.html
 wget https://raw.githubusercontent.com/roboptim/roboptim-core/master/doc/getting-started.html -O roboptim-core/getting-started.html
+
+echo "Downloading filters.html"
+rm -f roboptim-core/filters.html
+wget https://raw.githubusercontent.com/roboptim/roboptim-core/master/doc/filters.html -O roboptim-core/filters.html
+
+popd
