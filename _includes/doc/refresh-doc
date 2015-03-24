@@ -10,8 +10,8 @@ echo "Downloading getting-started.html"
 rm -f roboptim-core/getting-started.html
 wget https://raw.githubusercontent.com/roboptim/roboptim-core/master/doc/getting-started.html -O roboptim-core/getting-started.html
 
-echo "Downloading filters.html"
-rm -f roboptim-core/filters.html
-wget https://raw.githubusercontent.com/roboptim/roboptim-core/master/doc/filters.html -O roboptim-core/filters.html
+echo "Downloading operators-decorators.html"
+rm -f roboptim-core/operators-decorators.html
+wget https://raw.githubusercontent.com/roboptim/roboptim-core/master/doc/operators-decorators.html -O roboptim-core/operators-decorators.html
 
 popd
