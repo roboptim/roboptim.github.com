@@ -13,6 +13,7 @@
   github: roboptim-core-plugin-cminpack
   releases:
      - 3.0
+  status: beta
 
 - name: RobOptim Core Plugin IPOPT
   github: roboptim-core-plugin-ipopt
@@ -61,3 +62,4 @@
   github: roboptim-trajectory
   releases:
      - 3.0
+  status: beta

@@ -28,9 +28,7 @@ disqus: yes
       <tr id="{{ package.github }}">
 	<td id="{{ package.github }}-dl-link">{{ package.name }}</td>
 	<td id="{{ package.github }}-version">
-	  {% for version in package.releases %}
-	  <a href="https://github.com/roboptim/{{ package.github }}/releases/tag/v{{ version }}">{{ version }}</a>
-	  {% endfor %}
+	  <a href="https://github.com/roboptim/{{ package.github }}/releases/tag/v{{ version }}">{{ package.releases | last }}</a>
 	  {% unless package.releases.size %}
 	  n/a
 	  {% endunless %}
