@@ -130,3 +130,13 @@
     name: Ceres
     url: http://ceres-solver.org
   github: false
+- name: qpOASES
+  license: LGPL 2.1
+  type: QP
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: qpOASES
+    url: https://projects.coin-or.org/qpOASES
+  github: roboptim-core-plugin-qpoases

@@ -2,6 +2,7 @@
   github: roboptim-core
   releases:
      - 2.0
+     - 3.0
   status: stable
 
 - name: RobOptim Core Python
@@ -10,12 +11,14 @@
 
 - name: RobOptim Core Plugin CMinPack
   github: roboptim-core-plugin-cminpack
-  status: stable
+  releases:
+     - 3.0
 
 - name: RobOptim Core Plugin IPOPT
   github: roboptim-core-plugin-ipopt
   releases:
      - 2.0
+     - 3.0
   status: stable
 
 - name: RobOptim Core Plugin Eigen
@@ -56,4 +59,5 @@
 
 - name: RobOptim Trajectory
   github: roboptim-trajectory
-  status: stable
+  releases:
+     - 3.0
