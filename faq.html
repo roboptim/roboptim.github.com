@@ -141,3 +141,25 @@ be slower as they may copy uselessly data around or do not use the
 solver API in the most efficient way. Check
 the <a href="solvers.html">solvers page</a> and look for stable,
 mature solver bridges.</p>
+
+<h2>RobOptim reports that the plug-in could not be found. How can I solve
+  this?</h2>
+
+<p>This is actually libltdl's default error message, for instance:</p>
+
+<blockquote>
+libltdl failed to load plug-in ``roboptim-core-plugin-xxx'': file not found
+</blockquote>
+
+<p>Most of the time, it indicates that libltdl could not find the solver plug-in
+you were trying to use. Make sure the plug-in is properly installed, and that it
+is in your <code>LD_LIBRARY_PATH</code> (or the equivalent for your
+distribution).</p>
+
+<p>If this does not solve your problem (i.e. libltdl should find the library
+but still reports it as not found), you can enable the dynamic linker's
+debug mode (<code>export LD_DEBUG=all ./your_executable</code> on Linux).
+This will generate a <b>massive</b> quantity of output. Redirect it to a file,
+open your favorite editor, and start looking for messages like <i>"symbol lookup
+ error: undefined symbol..."</i>. This may help pinpoint the actual problem.
+</p>
