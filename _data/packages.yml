@@ -50,6 +50,10 @@
   github: roboptim-core-plugin-knitro
   status: alpha
 
+- name: RobOptim Core Manifold
+  github: roboptim-core-manifold
+  status: beta
+
 - name: RobOptim Analysis
   github: roboptim-analysis
   status: beta
