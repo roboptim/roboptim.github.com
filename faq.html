@@ -163,3 +163,23 @@ This will generate a <b>massive</b> quantity of output. Redirect it to a file,
 open your favorite editor, and start looking for messages like <i>"symbol lookup
  error: undefined symbol..."</i>. This may help pinpoint the actual problem.
 </p>
+
+<h2>How can I run one of the tests for dense (or sparse) matrices only?</h2>
+
+<p>Most of our tests are implemented generically for both dense and sparse
+matrices. Since we rely on Boost.Test, you can use the <a
+  href="http://www.boost.org/doc/libs/1_56_0/libs/test/doc/html/utf/user-guide/runtime-config/run-by-name.html"><code>--run_test</code></a>
+command-line argument to run specific test units selected by their name.
+This provides a simple way to select the kind of tests you want to run.</p>
+
+<p>The easiest way is to use wilcards, for instance:</p>
+
+<blockquote>
+./tests/function-constant --run_test=*Dense*
+</blockquote>
+
+<p>Note that depending on your shell, you may need to escape the wildcards:</p>
+
+<blockquote>
+./tests/function-constant --run_test=\*Dense\*
+</blockquote>
