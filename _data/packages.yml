@@ -3,6 +3,7 @@
   releases:
      - 2.0
      - 3.0
+     - 3.1
   status: stable
 
 - name: RobOptim Core Python
@@ -13,6 +14,7 @@
   github: roboptim-core-plugin-cminpack
   releases:
      - 3.0
+     - 3.1
   status: beta
 
 - name: RobOptim Core Plugin IPOPT
@@ -20,10 +22,14 @@
   releases:
      - 2.0
      - 3.0
+     - 3.1
   status: stable
 
 - name: RobOptim Core Plugin Eigen
   github: roboptim-core-plugin-eigen
+  releases:
+     - 3.0
+     - 3.1
   status: beta
 
 - name: RobOptim Core Plugin NAG
@@ -36,7 +42,10 @@
 
 - name: RobOptim Core Plugin NLopt
   github: roboptim-core-plugin-nlopt
-  status: alpha
+  releases:
+     - 3.0
+     - 3.1
+  status: beta
 
 - name: RobOptim Core Plugin PaGMO
   github: roboptim-core-plugin-pagmo
@@ -60,10 +69,14 @@
 
 - name: RobOptim Capsule
   github: roboptim-capsule
+  releases:
+     - 3.0
+     - 3.1
   status: beta
 
 - name: RobOptim Trajectory
   github: roboptim-trajectory
   releases:
      - 3.0
+     - 3.1
   status: beta
