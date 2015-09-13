@@ -1,3 +1,9 @@
+- name: pg-manifolds
+  title: Non-Euclidian Manifolds
+  description: "Humanoid Posture Generation on non-Euclidian Manifolds"
+  video:
+    youtube_id: InQxVStA0Gs
+
 - name: pg-ellipses
   title: Non-Inclusive Contacts
   description: "Integration of Non-Inclusive Contacts in Posture Generation."

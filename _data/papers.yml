@@ -1,3 +1,31 @@
+- id: brossette:humanoids:2015
+  title: "Humanoid Posture Generation on non-Euclidian Manifolds"
+  author:
+  - family: Brossette
+    given: Stanilas
+  - family: Escande
+    given: Adrien
+  - family: Duchemin
+    given: Grégoire
+  - family: Chrétien
+    given: Benjamin
+  - family: Kheddar
+    given: Abderrahmane
+  year: 2015
+  container-title: IEEE/RAS International Conference on Humanoid Robots (Humanoids'2015)
+  type: book
+- id: chretien:iros:2015
+  title: "Continuously satisfying constraints with contact forces in trajectory optimization for humanoid robots"
+  author:
+  - family: Chrétien
+    given: Benjamin
+  - family: Escande
+    given: Adrien
+  - family: Kheddar
+    given: Abderrahmane
+  year: 2015
+  container-title: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS'2015)
+  type: book
 - id: moulard:rsj:2014
   title: "Software Tools for Nonlinear Optimization: Modern Solvers and Toolboxes for Robotics"
   author:
