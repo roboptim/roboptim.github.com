@@ -26,6 +26,7 @@
   year: 2015
   container-title: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS'2015)
   type: book
+  URL: http://hal-lirmm.ccsd.cnrs.fr/lirmm-01253539
 - id: moulard:rsj:2014
   title: "Software Tools for Nonlinear Optimization: Modern Solvers and Toolboxes for Robotics"
   author:
