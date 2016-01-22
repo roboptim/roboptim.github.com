@@ -140,6 +140,14 @@
   container-title: "Humanoids'12: 12th International Conference on Humanoid Robots"
   type: book
   URL: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00765817
+- id: moulard:thesis:2012
+  title: "Optimisation numérique pour la robotique et exécution de trajectoires référencées capteurs [Fr]"
+  author:
+  - family: Moulard
+    given: Thomas
+  year: 2012
+  type: thesis
+  URL: https://tel.archives-ouvertes.fr/tel-00738999
 - id: bouyarmane:thesis:2011
   title: "On Autonomous Humanoid Robots: Contact Planning for Locomotion and Manipulation"
   author:
@@ -158,4 +166,6 @@
   - family: Wieber
     given: Pierre-Brice
   year: 2010
+  container-title: "Rapport LAAS"
+  type: book
   URL: http://hal.archives-ouvertes.fr/hal-00486997
