@@ -157,9 +157,11 @@ disqus: true
         $(data.branch).each(function(index, value){
           var content = "";
           if (value.state === "passed")
-            content = "<span class='glyphicon glyphicon-ok-sign'></span>";
+            content = "<span class='glyphicon glyphicon-ok'></span>";
           else if (value.state === "errored")
-            content = "<span class='glyphicon glyphicon-remove-sign'></span>";
+            content = "<span class='glyphicon glyphicon-remove'></span>";
+          else if (value.state === "failed")
+            content = "<span class='glyphicon glyphicon-remove'></span>";
           else
             content = value.state;
           content = "<a href ='https://travis-ci.org/roboptim/" + project + "'>" + content + "</a>";
