@@ -1,3 +1,16 @@
+- id: chretien:tpds:2016
+  title: "GPU Robot Motion Planning using Semi-Infinite Nonlinear Programming"
+  author:
+  - family: Chrétien
+    given: Benjamin
+  - family: Escande
+    given: Adrien
+  - family: Kheddar
+    given: Abderrahmane
+  year: 2016
+  container-title: IEEE Transactions on Parallel and Distributed Systems (TPDS)
+  type: book
+  URL: http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7390287
 - id: brossette:humanoids:2015
   title: "Humanoid Posture Generation on non-Euclidean Manifolds"
   author:
