@@ -158,7 +158,7 @@ operating system).</p>
 
 <p>If this does not solve your problem (i.e. libltdl should find the library
 but still reports it as not found), you can enable the dynamic linker's
-debug mode (<code>export LD_DEBUG=all ./your_executable</code> on Linux).
+debug mode (<code>LD_DEBUG=all ./your_executable</code> on Linux).
 This will generate a <b>massive</b> quantity of output. Redirect it to a file,
 open your favorite editor, and start looking for messages like <i>"symbol lookup
  error: undefined symbol..."</i>. This may help pinpoint the actual problem.
