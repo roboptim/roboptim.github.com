@@ -27,6 +27,7 @@
   year: 2015
   container-title: IEEE/RAS International Conference on Humanoid Robots (Humanoids'2015)
   type: book
+  URL: https://hal.archives-ouvertes.fr/hal-01265418
 - id: chretien:iros:2015
   title: "Continuously satisfying constraints with contact forces in trajectory optimization for humanoid robots"
   author:
