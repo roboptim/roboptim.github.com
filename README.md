@@ -36,3 +36,9 @@ update these pages, simply run:
 ```sh
 $ ./_includes/doc/refresh-doc
 ```
+
+## DNS Configuration
+
+roboptim.net is currently handled by thomas-moulard@ using Google Domains.
+Configuring directly the root record to point on GitHub IPs does not seem to work so Google Domains
+redirection is used instead.
