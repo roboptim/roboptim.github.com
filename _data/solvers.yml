@@ -140,3 +140,13 @@
     name: qpOASES
     url: https://projects.coin-or.org/qpOASES
   github: roboptim-core-plugin-qpoases
+- name: HQP
+  license: LGPL 2
+  type: Nonlinear Sparse QP
+  feature:
+    constraint: yes
+  status: wanted
+  upstream:
+    name: HQP
+    url: http://omuses.github.io/hqp
+  github: roboptim-core-plugin-hqp
