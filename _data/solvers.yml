@@ -142,11 +142,21 @@
   github: roboptim-core-plugin-qpoases
 - name: HQP
   license: LGPL 2
-  type: Nonlinear Sparse QP
+  type: Nonlinear (Sparse SQP)
   feature:
     constraint: yes
   status: wanted
   upstream:
     name: HQP
     url: http://omuses.github.io/hqp
-  github: roboptim-core-plugin-hqp
+  github: false
+- name: PGSolver
+  license: unknown
+  type: Nonlinear (SQP on non-Euclidean manifolds)
+  feature:
+    constraint: yes
+  status: unreleased
+  upstream:
+    name: unknown
+    url: \#
+  github: false
