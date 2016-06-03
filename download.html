@@ -18,32 +18,28 @@ disqus: yes
     <thead>
       <tr>
 	<td><em>Package</em></td>
-	<td>Latest Release</td>
-	<td>Availability in Linux Distributions</td>
+	<td><em>Latest Release</em></td>
       </tr>
     </thead>
     <tbody>
       {% for package in site.data.packages %}
       {% if package.status == 'stable' %}
+        {% capture annotation %}{% endcapture %}
+      {% else %}
+        {% capture annotation %}<sup>{{ package.status }}</sup>{% endcapture %}
+      {% endif %}
       <tr id="{{ package.github }}">
-	<td id="{{ package.github }}-dl-link">{{ package.name }}</td>
+	<td id="{{ package.github }}-dl-link"><a href="https://github.com/roboptim/{{ package.github }}">{{ package.name }}</a> {{ annotation }}</td>
 	<td id="{{ package.github }}-version">
 	  <a href="https://github.com/roboptim/{{ package.github }}/releases/tag/v{{ package.releases | last }}">{{ package.releases | last }}</a>
 	  {% unless package.releases.size %}
 	  n/a
 	  {% endunless %}
 	</td>
-	<td><span id="osw_{{ package.github }}"></span><br><span id="osw_lib{{ package.github }}2"></span></td>
       </tr>
-      {% endif %}
       {% endfor %}
     </tbody>
   </table>
-
-  <p>
-    <a href="http://oswatershed.org/"><img style="border: none; padding-right: 4px;" src="http://static.oswatershed.org/small_logo.png" /></a>
-    Statistics regarding releases availability in Linux Distributions are provided by OS Watershed.
-  </p>
 
 </div>
 
@@ -58,13 +54,13 @@ disqus: yes
 </p>
 
 <ul class="nav nav-tabs" id="howto">
-  <li><a href="#arch" data-toggle="tab"><img src="http://static.oswatershed.org/arch.png"> Arch Linux</a></li>
-  <li class="active"><a href="#debian" data-toggle="tab"><img src="http://static.oswatershed.org/debian.png">
-      Debian / <img src="http://static.oswatershed.org/ubuntu.png"> Ubuntu</a></li>
-  <li><a href="#fedora" data-toggle="tab"><img src="http://static.oswatershed.org/fedora.png"> Fedora</a></li>
-  <li><a href="#homebrew" data-toggle="tab">Mac OS X (Homebrew)</a></li>
+  <li><a href="#arch" data-toggle="tab"><img src="assets/arch.png"> Arch Linux</a></li>
+  <li class="active"><a href="#debian" data-toggle="tab"><img src="assets/debian.png">
+      Debian / <img src="assets/ubuntu.png"> Ubuntu</a></li>
+  <li><a href="#fedora" data-toggle="tab"><img src="assets/fedora.png"> Fedora</a></li>
+  <li><a href="#homebrew" data-toggle="tab"><img src="assets/apple.png"> Mac OS X (Homebrew)</a></li>
   <li><a href="#robotpkg" data-toggle="tab">robotpkg</a></li>
-  <li><a href="#windows" data-toggle="tab">Windows (source)</a></li>
+  <li><a href="#windows" data-toggle="tab"><img src="assets/windows.png"> Windows (source)</a></li>
   <li><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span> Source</a></li>
 </ul>
 
