@@ -10,7 +10,7 @@ disqus: yes
 <h2>Releases</h2>
 
 <p class="lead">
-  RobOptim is currently available on Linux and Mac OS X.
+  RobOptim is currently available on Linux and Mac OS X. Windows support is still experimental.
 </p>
 
 <div class="table-responsive">
@@ -51,10 +51,10 @@ disqus: yes
 <h2>How to install RobOptim on your machine?</h2>
 
 <p class="lead">
-  Choose your Linux Distribution in the list or choose source install
+  Choose your distribution in the list or choose source install
   if your distribution is unsupported. Instructions are for the Core
-  package but other packages can be installed following the same steps
-  and replace "core" by the appropiate package you want to install.
+  package but other packages can be installed following the same steps,
+  simply replace "core" by the appropiate package you want to install.
 </p>
 
 <ul class="nav nav-tabs" id="howto">
@@ -64,6 +64,7 @@ disqus: yes
   <li><a href="#fedora" data-toggle="tab"><img src="http://static.oswatershed.org/fedora.png"> Fedora</a></li>
   <li><a href="#homebrew" data-toggle="tab">Mac OS X (Homebrew)</a></li>
   <li><a href="#robotpkg" data-toggle="tab">robotpkg</a></li>
+  <li><a href="#windows" data-toggle="tab">Windows (source)</a></li>
   <li><a href="#source" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span> Source</a></li>
 </ul>
 
@@ -109,6 +110,53 @@ disqus: yes
     # from your robotpkg directory
     $ cd optimization/roboptim-core && make update
     {% endhighlight %}
+  </div>
+  <div class="tab-pane" id="windows">
+
+    <p><b>/!\ DISCLAIMER /!\</b> Windows/Visual Studio support is still experimental, so avoid it if you are not an experienced developer.</p>
+
+    <p>If you are using Windows, you will first need to install RobOptim's dependencies:</p>
+
+    <ul>
+      <li>
+        <a href="https://chocolatey.org/packages/git" target="_blank">Git</a> (available with chocolatey),
+      </li>
+      <li>
+        <a href="https://chocolatey.org/packages/cmake" target="_blank">CMake</a> (available with chocolatey),
+      </li>
+      <li>
+        <a href="http://www.boost.org/doc/libs/1_61_0/more/getting_started/windows.html" target="_blank">Boost</a> (from source),
+      </li>
+      <li>
+        <a href="https://chocolatey.org/packages/doxygen.portable" target="_blank">doxygen</a> (available with chocolatey),
+      </li>
+      <li>
+        <a href="https://github.com/gergondet/ltdl-win32" target="_blank">ltdl</a> (from source),
+      </li>
+      <li>
+        patched <a href="https://github.com/aescande/log4cxxWin32" target="_blank">log4cxx</a> (from source).
+      </li>
+    </ul>
+
+    <p>Your environment will also need to be set accordingly, with the following environment variables:</p>
+    <ul>
+      <li>
+        <b>PKG_CONFIG_PATH</b>: path to the pkgconfig directory containing .pc files (e.g. C:/devel/lib/pkgconfig).
+      </li>
+    </ul>
+
+    <p>You can finally start building RobOptim:</p>
+    <ul>
+      <li>
+        Clone the repository (e.g. https://github.com/roboptim/roboptim-core.git) and initialize/update its submodules,
+      </li>
+      <li>
+        Generate the Visual Studio solution with CMake (you will probably need to provide some CMake variables such as <b>BOOST_ROOT</b> and <b>BOOST_LIBRARYDIR</b>),
+      </li>
+      <li>
+        Compile the project and run tests in Visual Studio to make sure dependencies were properly installed.
+      </li>
+    </ul>
   </div>
   <div class="tab-pane" id="homebrew">
     <div class="bs-callout bs-callout-info">
@@ -203,7 +251,7 @@ disqus: yes
     <h3>Installing from Git</h3>
 
     {% highlight bash %}
-    $ git clone --recursive git://github.com/roboptim/roboptim-core.git
+    $ git clone --recursive https://github.com/roboptim/roboptim-core.git
     # Move to the newly created directory
     $ cd roboptim-core
     # Create build directory
